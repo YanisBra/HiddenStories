@@ -80,9 +80,9 @@ const LoginScreen = () => {
     }
   };
 
-  const logOut = async () => {
-    await signOut(auth);
-  };
+  // const logOut = async () => {
+  //   await signOut(auth);
+  // };
 
 
   return (
@@ -121,9 +121,9 @@ const LoginScreen = () => {
           <button className="button" onClick={signUp}>
             Créer un compte
           </button>
-          <button className="button" onClick={logOut}>
+          {/* <button className="button" onClick={logOut}>
             Se déconnecter
-          </button>
+          </button> */}
           <Link to="/">
             <button>Go to Home</button>
           </Link>
