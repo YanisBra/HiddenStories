@@ -62,12 +62,12 @@ const LoginScreen = () => {
       );
 
       // Enregistrement de l'utilisateur dans Firestore
-      const userDocRef = await addDoc(collection(db, "users"), {
-        uid: response.user.uid,
-        email: response.user.email,
-        role: "user",
-        username: username,
-      });
+      // const userDocRef = await addDoc(collection(db, "users"), {
+      //   uid: response.user.uid,
+      //   email: response.user.email,
+      //   role: "user",
+      //   username: username,
+      // });
 
       console.log(
         "Utilisateur enregistré avec succès dans Firestore:",
@@ -88,13 +88,13 @@ const LoginScreen = () => {
   return (
     <div className="container">
       <h2 className="title">LoginScreen</h2>
-      <input
+      {/* <input
         className="input"
         type="text"
         placeholder="username"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
-      />
+      /> */}
       <input
         className="input"
         type="text"

@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import LeftContent from "../Components/LeftContent";
-import RightContent from "../Components/RightContent";
-import TopContent from "../Components/TopContent";
-import BottomContent from "../Components/BottomContent";
+import International from "../Sections/Intenational";
+import History from "../Sections/History";
+import Slider from "../Components/Slider";
 
 
 
@@ -19,12 +18,9 @@ const HomeScreen = () => {
           <NavLink to="/profile">Profile</NavLink>
         </div>
       </Navbar>
-      <ContentContainer>
-        <TopContent />
-        <LeftContent />
-        <RightContent />
-        <BottomContent />
-      </ContentContainer>
+      <History />
+      <International />
+      <Slider />
     </>
   );
 };
@@ -50,9 +46,6 @@ const NavLink = styled(Link)`
   &:hover {
     color: #007bff;
   }
-`;
-
-const ContentContainer = styled.div`
 `;
 
 export default HomeScreen;
