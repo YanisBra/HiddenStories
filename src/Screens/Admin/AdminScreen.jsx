@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { signOut, onAuthStateChanged } from "firebase/auth";
-import LoginScreen from "./LoginScreen";
-import { FIREBASE_AUTH } from "../Config/firebase";
+import LoginScreen from "./Login";
+import { FIREBASE_AUTH } from "../../Config/firebase";
+import NewDocument from "./NewDocument";
+import Backoffice from "./Backoffice";
 
 const AdminScreen = () => {
   const auth = FIREBASE_AUTH;
@@ -34,7 +36,8 @@ const AdminScreen = () => {
             Se déconnecter
           </button>
           <p>Connecté en tant qu'utilisateur : {user.email}</p>
-          {/* Contenu de la page admin */}
+          <Backoffice/>
+          <NewDocument />
         </>
       ) : (
         <LoginScreen /> // Affiche le composant de connexion si aucun utilisateur n'est connecté

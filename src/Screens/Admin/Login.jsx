@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FIREBASE_AUTH } from "../Config/firebase";
+import { FIREBASE_AUTH } from "../../Config/firebase";
 import { collection, addDoc } from "firebase/firestore";
-import { db } from "../Config/firebase";
+import { db } from "../../Config/firebase";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
-  signOut
+  signOut,
 } from "firebase/auth";
 
 const LoginScreen = () => {
@@ -16,11 +16,6 @@ const LoginScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const [user, setUser] = useState({});
-
-  // onAuthStateChanged(auth, (currentUser) => {
-  //   setUser(currentUser)
-  // });
 
   //Connexion d'un user
   const signIn = async () => {
@@ -35,6 +30,7 @@ const LoginScreen = () => {
     }
   };
 
+  // Création d'un user
   // const signUp = async () => {
   //   setLoading(true);
   //   try {
@@ -43,23 +39,6 @@ const LoginScreen = () => {
   //       email,
   //       password
   //     );
-  //     console.log(response);
-  //   } catch (error) {
-  //     console.log(error);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
-  // Création d'un user
-  const signUp = async () => {
-    setLoading(true);
-    try {
-      const response = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
 
       // Enregistrement de l'utilisateur dans Firestore
       // const userDocRef = await addDoc(collection(db, "users"), {
@@ -69,21 +48,16 @@ const LoginScreen = () => {
       //   username: username,
       // });
 
-      console.log(
-        "Utilisateur enregistré avec succès dans Firestore:",
-        userDocRef.id
-      );
-    } catch (error) {
-      console.log("Erreur lors de l'inscription:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  // const logOut = async () => {
-  //   await signOut(auth);
+  //     console.log(
+  //       "Utilisateur enregistré avec succès dans Firestore:",
+  //       userDocRef.id
+  //     );
+  //   } catch (error) {
+  //     console.log("Erreur lors de l'inscription:", error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
   // };
-
 
   return (
     <div className="container">
@@ -118,22 +92,14 @@ const LoginScreen = () => {
           <button className="button" onClick={signIn}>
             Connexion
           </button>
-          <button className="button" onClick={signUp}>
+          {/* <button className="button" onClick={signUp}>
             Créer un compte
-          </button>
-          {/* <button className="button" onClick={logOut}>
-            Se déconnecter
           </button> */}
           <Link to="/">
             <button>Go to Home</button>
           </Link>
         </>
       )}
-      {/* <h4>User logged in: {user ? user.email : "Not connected"}</h4> */}
-      <h4>
-        User logged in:{" "}
-        {auth.currentUser ? auth.currentUser.email : "Not connected"}
-      </h4>
     </div>
   );
 };

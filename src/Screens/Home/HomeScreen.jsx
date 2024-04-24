@@ -1,21 +1,15 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import International from "../Sections/Intenational";
-import History from "../Sections/History";
-import Slider from "../Components/Slider";
-
-
+import International from "./International/Intenational";
+import History from "./History/History";
+import Slider from "../../Components/Slider";
 
 const HomeScreen = () => {
   return (
     <>
       <Navbar>
         <div>
-          <NavLink to="/login">Login</NavLink>
           <NavLink to="/admin">Admin</NavLink>
-        </div>
-        <div>
-          <NavLink to="/profile">Profile</NavLink>
         </div>
       </Navbar>
       <History />
