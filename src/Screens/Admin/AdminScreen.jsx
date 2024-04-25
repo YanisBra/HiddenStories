@@ -36,7 +36,7 @@ const AdminScreen = () => {
             Se déconnecter
           </button>
           <p>Connecté en tant qu'utilisateur : {user.email}</p>
-          <Backoffice/>
+          <Backoffice />
           <NewDocument />
         </>
       ) : (
