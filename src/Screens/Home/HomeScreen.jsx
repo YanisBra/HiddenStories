@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import International from "./International/Intenational";
 import History from "./History/History";
+import France from "./France/France";
 import News from "./News/News";
 
 const HomeScreen = () => {
@@ -14,6 +15,7 @@ const HomeScreen = () => {
       </Navbar>
       <History />
       <International />
+      {/* <France /> */}
       <News />
     </>
   );

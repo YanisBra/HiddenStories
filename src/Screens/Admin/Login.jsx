@@ -1,23 +1,16 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FIREBASE_AUTH } from "../../Config/firebase";
-import { collection, addDoc } from "firebase/firestore";
-import { db } from "../../Config/firebase";
-import {
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
-  onAuthStateChanged,
-  signOut,
-} from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { Form, Button, Spinner, Container, Row, Col } from "react-bootstrap"; // Import des composants Bootstrap
 
 const LoginScreen = () => {
   const auth = FIREBASE_AUTH;
-  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
-  //Connexion d'un user
+  // Connexion d'un utilisateur
   const signIn = async () => {
     setLoading(true);
     try {
@@ -30,77 +23,56 @@ const LoginScreen = () => {
     }
   };
 
-  // Création d'un user
-  // const signUp = async () => {
-  //   setLoading(true);
-  //   try {
-  //     const response = await createUserWithEmailAndPassword(
-  //       auth,
-  //       email,
-  //       password
-  //     );
-
-      // Enregistrement de l'utilisateur dans Firestore
-      // const userDocRef = await addDoc(collection(db, "users"), {
-      //   uid: response.user.uid,
-      //   email: response.user.email,
-      //   role: "user",
-      //   username: username,
-      // });
-
-  //     console.log(
-  //       "Utilisateur enregistré avec succès dans Firestore:",
-  //       userDocRef.id
-  //     );
-  //   } catch (error) {
-  //     console.log("Erreur lors de l'inscription:", error);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
   return (
-    <div className="container">
-      <h2 className="title">LoginScreen</h2>
-      {/* <input
-        className="input"
-        type="text"
-        placeholder="username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      /> */}
-      <input
-        className="input"
-        type="text"
-        placeholder="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        className="input"
-        type="password"
-        placeholder="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      {loading ? (
-        <div className="loading">
-          <p>Chargement...</p>
-        </div>
-      ) : (
-        <>
-          <button className="button" onClick={signIn}>
-            Connexion
-          </button>
-          {/* <button className="button" onClick={signUp}>
-            Créer un compte
-          </button> */}
-          <Link to="/">
-            <button>Go to Home</button>
-          </Link>
-        </>
-      )}
-    </div>
+    <Container>
+      <Row className="justify-content-center mt-5">
+        <Col md={6}>
+          <h2 className="text-center mb-4">LoginScreen</h2>
+          <Form>
+            <Form.Group controlId="formBasicEmail">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Enter email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formBasicPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </Form.Group>
+
+            {loading ? (
+              <Button variant="primary" disabled className="w-100">
+                <Spinner
+                  as="span"
+                  animation="border"
+                  size="sm"
+                  role="status"
+                  aria-hidden="true"
+                />
+                Loading...
+              </Button>
+            ) : (
+              <Button variant="primary" onClick={signIn} className="w-100 mt-3">
+                Connexion
+              </Button>
+            )}
+
+            <Link to="/" className="d-block text-center mt-3">
+              <Button variant="secondary">Go to Home</Button>
+            </Link>
+          </Form>
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
