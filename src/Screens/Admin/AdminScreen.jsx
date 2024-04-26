@@ -32,6 +32,9 @@ const AdminScreen = () => {
           <Button variant="danger" onClick={logOut}>
             Se déconnecter
           </Button>
+          <Link to="/" className="d-block text-center mt-3">
+            <Button variant="secondary">Go to Home</Button>
+          </Link>
           <Backoffice />
         </>
       ) : (

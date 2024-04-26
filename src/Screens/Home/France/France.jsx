@@ -42,7 +42,6 @@ const Header = styled.div`
   }
 
   p {
-    /* Styles pour le paragraphe */
   }
 `;
 
