@@ -2,14 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 const GreenCard = ({ number, title, content }) => {
-
-  const isEven = parseInt(number) % 2 === 0;
-
+  const iseven = parseInt(number) % 2 === 0;
 
   return (
     <Container>
       <NumberOverlay>{number}</NumberOverlay>
-      <CardContainer isEven={isEven}>
+      <CardContainer iseven={iseven ? "true" : "false"}>
         <CardTitle>{title}</CardTitle>
         <CardContent>{content}</CardContent>
       </CardContainer>
@@ -23,9 +21,11 @@ const Container = styled.div`
 `;
 
 const CardContainer = styled.div`
-  background-color: ${({ isEven }) => (isEven ? "white" : "var(--green)")};
-  color: ${({ isEven }) => (isEven ? "var(--green)" : "white")};
-  border: ${({ isEven }) => (isEven ? "1px solid var(--green)" : null)};
+  background-color: ${({ iseven }) =>
+    iseven === "true" ? "white" : "var(--green)"};
+  color: ${({ iseven }) => (iseven === "true" ? "var(--green)" : "white")};
+  border: ${({ iseven }) =>
+    iseven === "true" ? "1px solid var(--green)" : "none"};
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 6px;

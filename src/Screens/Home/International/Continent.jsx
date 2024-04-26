@@ -100,7 +100,7 @@ const Continent = () => {
               <CountryCard
                 key={index}
                 country={country}
-                isSelected={country === selectedCountry}
+                selected={country === selectedCountry}
                 onClick={() => handleCountryClick(country)}
               />
             ))}

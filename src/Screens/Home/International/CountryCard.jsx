@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-const CountryCard = ({ country, onClick, isSelected }) => {
+const CountryCard = ({ country, onClick, selected }) => {
   return (
-    <StyledCard onClick={() => onClick(country)} isSelected={isSelected}>
+    <StyledCard onClick={() => onClick(country)} selected={selected}>
       <img src={country.image} alt={country.name} />
       <h3>{country.name}</h3>
     </StyledCard>
@@ -18,8 +18,10 @@ const StyledCard = styled.div`
   width: 120px;
   min-width: 120px;
   background-color: ${(props) =>
-    props.isSelected ? "var(--green)" : "transparent"};
-  color: ${(props) => (props.isSelected ? "#ffffff" : "var(--green)")};
+    props.selected
+      ? "var(--green)"
+      : "transparent"}; // Utiliser props.selected directement
+  color: ${(props) => (props.selected ? "#ffffff" : "var(--green)")};
 
   img {
     width: 100%;
@@ -30,7 +32,7 @@ const StyledCard = styled.div`
   h3 {
     margin-top: 10px;
     font-size: 18px;
-    color: ${(props) => (props.isSelected ? "#ffffff" : "var(--green)")};
+    color: ${(props) => (props.selected ? "#ffffff" : "var(--green)")};
   }
 
   &:hover {

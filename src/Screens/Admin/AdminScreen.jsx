@@ -3,7 +3,8 @@ import { Button, Container } from "react-bootstrap"; // Import des composants Bo
 import { signOut, onAuthStateChanged } from "firebase/auth";
 import LoginScreen from "./Login";
 import { FIREBASE_AUTH } from "../../Config/firebase";
-import Backoffice from "./Backoffice";
+import { Link } from "react-router-dom";
+import Admin from "./Admin";
 
 const AdminScreen = () => {
   const auth = FIREBASE_AUTH;
@@ -35,7 +36,7 @@ const AdminScreen = () => {
           <Link to="/" className="d-block text-center mt-3">
             <Button variant="secondary">Go to Home</Button>
           </Link>
-          <Backoffice />
+          <Admin />
         </>
       ) : (
         <LoginScreen /> // Affiche le composant de connexion si aucun utilisateur n'est connecté
