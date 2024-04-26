@@ -15,11 +15,11 @@ const HomeScreen = () => {
           <NavLink to="/admin">Admin</NavLink>
         </div>
       </Navbar>
-      <LandingPage/>
+      <LandingPage />
       <History />
       <International />
       <France />
-      <Story/>
+      <Story />
       <News />
     </>
   );

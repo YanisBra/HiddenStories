@@ -22,11 +22,12 @@ const LandingPage = () => {
 };
 
 const Container = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   max-height: 720px;
   display: flex;
   background-image: url("../public/img/background.gif");
+  overflow: hidden;
 `;
 
 const LeftContainer = styled.div`
@@ -51,7 +52,7 @@ const RightContainer = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  color:white;
+  color: white;
 `;
 
 export default LandingPage;

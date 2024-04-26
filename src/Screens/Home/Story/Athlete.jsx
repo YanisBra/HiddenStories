@@ -9,14 +9,14 @@ const Athlete = ({ name, image, content, video }) => {
         <img className="image" src={image} alt={name} />
         <iframe
           className="video"
-          width="150"
-          height="150"
+          width="190"
+          height="108"
           src={video}
           title="YouTube video player"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
         ></iframe>
       </ImageContainer>
       <Content>
@@ -33,9 +33,9 @@ const Container = styled.div`
 
 const ImageContainer = styled.div`
   position: relative;
-  width: 400px; 
-  height: 400px; 
-  margin:auto;
+  width: 400px;
+  height: 400px;
+  margin: auto;
 
   .image {
   }

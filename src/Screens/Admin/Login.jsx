@@ -67,7 +67,7 @@ const LoginScreen = () => {
             )}
 
             <Link to="/" className="d-block text-center mt-3">
-              <Button variant="secondary">Go to Home</Button>
+              <Button variant="secondary">Go to Webdoc</Button>
             </Link>
           </Form>
         </Col>
