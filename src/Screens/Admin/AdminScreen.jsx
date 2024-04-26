@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Button, Container } from "react-bootstrap"; // Import des composants Bootstrap
+import React from "react";
+import { Button, Container, Nav } from "react-bootstrap"; // Import des composants Bootstrap
 import { signOut, onAuthStateChanged } from "firebase/auth";
 import LoginScreen from "./Login";
 import { FIREBASE_AUTH } from "../../Config/firebase";
@@ -8,9 +8,9 @@ import Admin from "./Admin";
 
 const AdminScreen = () => {
   const auth = FIREBASE_AUTH;
-  const [user, setUser] = useState(null); // État pour stocker l'utilisateur connecté
+  const [user, setUser] = React.useState(null); // État pour stocker l'utilisateur connecté
 
-  useEffect(() => {
+  React.useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user); // Met à jour l'état de l'utilisateur lorsqu'il y a un changement d'état d'authentification
     });
@@ -27,20 +27,31 @@ const AdminScreen = () => {
   };
 
   return (
-    <Container className="mt-5">
-      {user ? ( // Vérifie si un utilisateur est connecté
-        <>
-          <Button variant="danger" onClick={logOut}>
-            Se déconnecter
-          </Button>
-          <Link to="/" className="d-block text-center mt-3">
-            <Button variant="secondary">Go to Home</Button>
+    <Container fluid className="d-flex p-0">
+      {/* Barre de navigation verticale à gauche */}
+      <Nav className="flex-column bg-light p-3" style={{ width: "250px" }}>
+        <Nav.Item>
+          <Link to="/" className="nav-link">
+            Home
           </Link>
+        </Nav.Item>
+        {user && (
+          <Nav.Item>
+            <Button variant="danger" onClick={logOut} className="mt-3">
+              Logout
+            </Button>
+          </Nav.Item>
+        )}
+      </Nav>
+
+      {/* Contenu principal à droite */}
+      <Container className="p-3">
+        {user ? ( // Vérifie si un utilisateur est connecté
           <Admin />
-        </>
-      ) : (
-        <LoginScreen /> // Affiche le composant de connexion si aucun utilisateur n'est connecté
-      )}
+        ) : (
+          <LoginScreen /> // Affiche le composant de connexion si aucun utilisateur n'est connecté
+        )}
+      </Container>
     </Container>
   );
 };
