@@ -1,27 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 
-const Card = () => {
+const GreenCard = ({number, title, content}) => {
   return (
     <Container>
+      <NumberOverlay>{number}</NumberOverlay>
       <CardContainer>
-        <CardTitle>Titre de la carte</CardTitle>
-        <CardContent>
-          Contenu de la carte. Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit.
+        <CardTitle>{title}</CardTitle>
+        <CardContent>{content}
         </CardContent>
       </CardContainer>
     </Container>
   );
 };
 
-
 const Container = styled.div`
-  width: 33%;
+  margin:auto;
+  position: relative; 
 `;
 
-
-// Définition du composant de la carte avec Styled Components
 const CardContainer = styled.div`
   background-color: var(--green);
   color: white;
@@ -36,7 +33,19 @@ const CardTitle = styled.h5`
 `;
 
 const CardContent = styled.p`
-  font-size: 1rem
+  font-size: 1rem;
 `;
 
-export default Card;
+const NumberOverlay = styled.p`
+  position: absolute;
+  top: -45px; 
+  left: -30px; 
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(
+    --gold
+  );
+  z-index: -1;
+`;
+
+export default GreenCard;

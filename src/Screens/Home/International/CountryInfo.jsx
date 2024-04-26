@@ -6,19 +6,19 @@ const CountryInfo = ({ name, content, date, image }) => {
     <Container>
       <Header>
         <div className="countryContainer">
-          <h2>Pays d'accueil</h2>
+          <h2 className="title">Pays d'accueil</h2>
           <img src={image} />
         </div>
         <div className="dateContainer">
-          <h2>Date d'accueil</h2>
+          <h2 className="title">Date d'accueil</h2>
           <p>{date}</p>
         </div>
       </Header>
       <Content>
-        <h2>{name}</h2>
+        <h2 className="title">{name}</h2>
         <p>{content}</p>
         <div className="champions">
-          <h2>Champions</h2>
+          <h2 className="title">Champions</h2>
           <p>John Marston</p>
         </div>
       </Content>
@@ -34,8 +34,7 @@ const Container = styled.div`
   padding: 10px;
   text-align: left;
 
-  h2 {
-    /* color: var(--gold); */
+  .title {
     color: var(--gold);
   }
 `;

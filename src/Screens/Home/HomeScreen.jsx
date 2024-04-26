@@ -15,7 +15,7 @@ const HomeScreen = () => {
       </Navbar>
       <History />
       <International />
-      {/* <France /> */}
+      <France />
       <News />
     </>
   );

@@ -258,6 +258,7 @@ const Backoffice = () => {
   const [editedTheme, setEditedTheme] = useState("");
   const [editedTitle, setEditedTitle] = useState("");
   const [editedContent, setEditedContent] = useState("");
+  const [editedImage, setEditedImage] = useState("");
   const [loading, setLoading] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false); // État pour contrôler l'affichage de la modal de suppression
   const [documentToDeleteId, setDocumentToDeleteId] = useState(null); // État pour stocker l'ID du document à supprimer
@@ -287,6 +288,7 @@ const Backoffice = () => {
       setEditedTheme(documentToEdit.theme);
       setEditedTitle(documentToEdit.title);
       setEditedContent(documentToEdit.content);
+      setEditedImage(documentToEdit.image);
     }
   };
 
@@ -297,6 +299,7 @@ const Backoffice = () => {
         theme: editedTheme,
         title: editedTitle,
         content: editedContent,
+        image: editedImage,
       });
 
       const updatedDocuments = documents.map((doc) =>
@@ -306,6 +309,7 @@ const Backoffice = () => {
               theme: editedTheme,
               title: editedTitle,
               content: editedContent,
+              image: editedImage,
             }
           : doc
       );

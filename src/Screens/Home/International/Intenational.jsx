@@ -17,15 +17,16 @@ const International = () => {
 };
 
 const Header = styled.div`
+margin-top:50px;
   text-align: center;
-  margin-top: 50px;
 
   h1 {
-    font-size: 30px;
+    font-weight: bold;
+    color: var(--green);
   }
 
   p {
-    font-size: 12px;
+    /* Styles pour le paragraphe */
   }
 `;
 
