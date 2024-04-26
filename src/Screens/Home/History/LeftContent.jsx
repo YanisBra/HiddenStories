@@ -22,7 +22,7 @@ const LeftContent = () => {
         <p className="dateBot">20</p>
       </div>
       <div className="imageContainer">
-        <img src="../public/img/img.png" />
+        <img src="../public/img/test.png" />
         {/* <p>Image</p> */}
       </div>
     </FirstContainer>

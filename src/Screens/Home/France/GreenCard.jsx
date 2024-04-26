@@ -1,27 +1,30 @@
 import React from "react";
 import styled from "styled-components";
 
-const GreenCard = ({number, title, content}) => {
+const GreenCard = ({ number, title, content }) => {
+
+  const isEven = parseInt(number) % 2 === 0;
+
   return (
-    <Container>
+    <Container isEven={isEven}>
       <NumberOverlay>{number}</NumberOverlay>
       <CardContainer>
         <CardTitle>{title}</CardTitle>
-        <CardContent>{content}
-        </CardContent>
+        <CardContent>{content}</CardContent>
       </CardContainer>
     </Container>
   );
 };
 
 const Container = styled.div`
-  margin:auto;
-  position: relative; 
+  margin: auto;
+  position: relative;
 `;
 
 const CardContainer = styled.div`
-  background-color: var(--green);
-  color: white;
+  background-color: ${({ isEven }) => (isEven ? "white" : "var(--green)")};
+  color: ${({ isEven }) => (isEven ? "var(--green)" : "white")};
+  border: 1px solid ${({ isEven }) => (isEven ? "var(--green)" : "white")};
   padding: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
@@ -38,13 +41,11 @@ const CardContent = styled.p`
 
 const NumberOverlay = styled.p`
   position: absolute;
-  top: -45px; 
-  left: -30px; 
+  top: -45px;
+  left: -30px;
   font-size: 3rem;
   font-weight: bold;
-  color: var(
-    --gold
-  );
+  color: var(--gold);
   z-index: -1;
 `;
 

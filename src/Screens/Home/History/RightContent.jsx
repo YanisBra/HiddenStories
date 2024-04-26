@@ -4,7 +4,7 @@ const RightContent = () => {
   return (
     <FirstContainer>
       <div className="imageContainer">
-        <img src="../public/img/img.png" />
+        <img src="../public/img/test.png" />
         {/* <p>Image</p> */}
       </div>
       <div className="dateContainer">
