@@ -19,8 +19,8 @@ const HomeScreen = () => {
       <History />
       <International />
       <France />
-      <Story />
-      <News />
+      {/* <Story />
+      <News /> */}
     </Container>
   );
 };

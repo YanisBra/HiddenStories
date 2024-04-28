@@ -21,27 +21,32 @@ const Container = styled.div`
 `;
 
 const CardContainer = styled.div`
+  width: 170px;
   background-color: ${({ iseven }) =>
     iseven === "true" ? "white" : "var(--green)"};
   color: ${({ iseven }) => (iseven === "true" ? "var(--green)" : "white")};
   border: ${({ iseven }) =>
     iseven === "true" ? "1px solid var(--green)" : "none"};
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
   border-radius: 6px;
 `;
 
 const CardTitle = styled.h5`
-  font-size: 1.5rem;
+  font-size: 17px;
+  font-weight: bold;
   margin-bottom: 10px;
+  font-family: "KoHo";
 `;
 
 const CardContent = styled.p`
-  font-size: 1rem;
+  font-size: 11px;
+  font-weight: lighter;
 `;
 
 const NumberOverlay = styled.p`
   position: absolute;
+  font-family: "Inter";
   top: -45px;
   /* left: -30px; */
   left: ${({ iseven }) => (iseven === "true" ? "" : "-30px")};
@@ -49,7 +54,7 @@ const NumberOverlay = styled.p`
   /* margin-right: auto; */
   right: -30px;
   font-size: 3rem;
-  font-weight: bold;
+  font-weight: 500;
   color: var(--gold);
   z-index: -1;
 `;

@@ -1,38 +1,27 @@
 const franceData = [
   {
     number: "01",
-    title: "Je suis le titre 1",
-    content: "Je suis le contenu 1",
+    title: "L'émergence du tennis de table ",
+    content:
+      "Lionel Messi est synonyme de FIFA FIFPRO World 11 masculin. Lorsque l’on parle de la surprenante longévité de son jeu au top des performances, le onze idéal est une parfaite référence ",
   },
   {
     number: "02",
-    title: "Je suis le titre 2",
-    content: "Je suis le contenu 2",
+    title: "La Fondation de la FFTT",
+    content:
+      "JLionel Messi est synonyme de FIFA FIFPRO World 11 masculin. Lorsque l’on parle de la surprenante longévité de son jeu au top des performances, le onze idéal est une parfaite référence ",
   },
   {
     number: "03",
-    title: "Je suis le titre 3",
-    content: "Je suis le contenu 3",
+    title: "Médailles et Gloire",
+    content:
+      "Lionel Messi est synonyme de FIFA FIFPRO World 11 masculin. Lorsque l’on parle de la surprenante longévité de son jeu au top des performances, le onze idéal est une parfaite référence ",
   },
   {
     number: "04",
-    title: "Je suis le titre 4",
-    content: "Je suis le contenu 4",
-  },
-  {
-    number: "05",
-    title: "Je suis le titre 5",
-    content: "Je suis le contenu 5",
-  },
-  {
-    number: "06",
-    title: "Je suis le titre 6",
-    content: "Je suis le contenu 6",
-  },
-  {
-    number: "07",
-    title: "Je suis le titre 7",
-    content: "Je suis le contenu 7",
+    title: "La Fondation de la FFTT",
+    content:
+      "Lionel Messi est synonyme de FIFA FIFPRO World 11 masculin. Lorsque l’on parle de la surprenante longévité de son jeu au top des performances, le onze idéal est une parfaite référence ",
   },
 ];
 

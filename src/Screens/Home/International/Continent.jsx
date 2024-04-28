@@ -144,7 +144,6 @@ const ContinentItem = styled.li`
   color: #5d816b;
   flex: 1;
 
-
   &.center {
     font-weight: 500;
     color: #c6a785;
