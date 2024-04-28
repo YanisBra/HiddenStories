@@ -9,7 +9,7 @@ import News from "./News/News";
 
 const HomeScreen = () => {
   return (
-    <>
+    <Container>
       <Navbar>
         <div>
           <NavLink to="/admin">Admin</NavLink>
@@ -21,9 +21,13 @@ const HomeScreen = () => {
       <France />
       <Story />
       <News />
-    </>
+    </Container>
   );
 };
+
+const Container = styled.div`
+  font-family: "Inria Sans";
+`;
 
 // Style de la barre de navigation design
 const Navbar = styled.nav`

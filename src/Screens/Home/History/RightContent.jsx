@@ -1,28 +1,33 @@
 import styled from "styled-components";
 
-const RightContent = () => {
+const LeftContent = ({
+  title,
+  content,
+  years,
+  lastYear,
+  dateTop,
+  dateBot,
+  image,
+}) => {
   return (
     <FirstContainer>
       <div className="imageContainer">
-        <img src="../public/img/test.png" />
+        <img src={image} />
         {/* <p>Image</p> */}
       </div>
       <div className="dateContainer">
-        <p className="dateTop">19</p>
-        <p className="dateBot">88</p>
+        <p className="dateTop">{dateTop}</p>
+        <p className="dateBot">{dateBot}</p>
       </div>
       <div className="textContainer">
-        <p className="title">Title</p>
-        <p className="content">
-          Émergence du ping-pong comme jeu de salon en Angleterre avec des
-          règles informelles.
-        </p>
+        <p className="title">{title}</p>
+        <p className="content">{content}</p>
         <button>Click me</button>
         <div className="years">
-          <p>1989</p>
-          <p>1922</p>
-          <p>1923</p>
-          <p className="lastYear">1924</p>
+          {years.map((year) => (
+            <p key={year}>{year}</p>
+          ))}
+          <p className="lastYear">{lastYear}</p>
         </div>
       </div>
     </FirstContainer>
@@ -31,19 +36,26 @@ const RightContent = () => {
 
 const FirstContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  overflow: hidden;
 
   .textContainer {
-    flex: 1;
+    width: 33%;
     padding: 6px;
+    /* background-color: #c68d8d; */
+    overflow: hidden;
 
     .title {
-      font-size: 24px;
+      margin-top: 15px;
+      font-size: 21px;
       color: #c6a785;
+      font-family: "KoHo";
+      font-weight: bold;
     }
 
     .content {
       font-size: 12px;
+      font-weight: lighter;
     }
 
     button {
@@ -52,13 +64,21 @@ const FirstContainer = styled.div`
       border-radius: 4px;
       font-size: 12px;
       padding: 6px;
+
       &:hover {
         cursor: pointer;
       }
     }
 
     .years {
+      margin-top: 10px;
       color: #b3b3b3;
+      font-weight: lighter;
+      font-family: "Inter";
+      font-size: 12px;
+      p {
+        margin-bottom: 10px;
+      }
 
       .lastYear {
         color: #5d816b;
@@ -68,30 +88,33 @@ const FirstContainer = styled.div`
   }
 
   .dateContainer {
-    width: 100px;
+    width: 120px;
     background-color: #5d816b;
 
     p {
       margin: 0;
       padding-right: 6px;
       color: white;
-      font-size: 50px;
+      font-size: 66px;
+      font-family: "Kumar One";
       text-align: right;
     }
 
     .dateTop {
       margin-top: 20px;
-      font-size: 50px;
+      font-size: 66px;
     }
   }
 
   .imageContainer {
+    /* background-color: #7593b4; */
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 1;
+    width: 33%;
     padding: 6px;
+    z-index: 1;
   }
 `;
 
-export default RightContent;
+export default LeftContent;

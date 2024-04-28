@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import franceData from "./franceData";
-import GreenCard from "./GreenCard";
+import Card from "./Card";
 
 const FranceDataList = () => {
   return (
@@ -17,7 +17,7 @@ const FranceDataList = () => {
       </Header>
       <CardGrid>
         {franceData.map((item) => (
-          <GreenCard
+          <Card
             key={item.number}
             number={item.number}
             title={item.title}
@@ -46,7 +46,7 @@ const Header = styled.div`
 `;
 
 const CardGrid = styled.div`
-margin-top:50px;
+  margin-top: 50px;
   display: grid;
   grid-template-columns: repeat(
     auto-fill,
