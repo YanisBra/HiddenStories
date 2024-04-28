@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import SectionHeader from "../../../Components/SectionHeader";
 import franceData from "./franceData";
-import Card from "./Card";
+import Card from "./FranceCard";
 
 const France = () => {
   return (
