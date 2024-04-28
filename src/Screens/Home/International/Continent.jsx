@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import Hammer from "hammerjs";
 import internationalData from "./internationalData";
 import CountryCard from "./CountryCard";
 import CountryInfo from "./CountryInfo";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretRight, faCaretLeft } from "@fortawesome/free-solid-svg-icons";
 
 const Continent = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -13,26 +14,6 @@ const Continent = () => {
   const [selectedCountry, setSelectedCountry] = useState(
     selectedContinent.countries[0]
   );
-
-  useEffect(() => {
-    const swipe = new Hammer(document.querySelector(".swipe"));
-
-    const handleSwipeLeft = () => {
-      next();
-    };
-
-    const handleSwipeRight = () => {
-      prev();
-    };
-
-    swipe.on("swipeleft", handleSwipeLeft);
-    swipe.on("swiperight", handleSwipeRight);
-
-    return () => {
-      swipe.off("swipeleft", handleSwipeLeft);
-      swipe.off("swiperight", handleSwipeRight);
-    };
-  }, []);
 
   const next = () => {
     const nextIndex = (currentIndex + 1) % internationalData.length;
@@ -75,23 +56,27 @@ const Continent = () => {
 
   return (
     <>
-      <Container>
-        <Button onClick={prev}>Précédent</Button>
-        <List>
+      <ContinentContainer>
+        <ContinentList>
+          <FontAwesomeIcon className="icon" onClick={prev} icon={faCaretLeft} />
+
           {getVisibleContinents().map(({ continent, index }, i) => (
-            <ListItem
+            <ContinentItem
               key={i}
               className={i === 1 ? "center" : ""}
               onClick={() => handleContinentClick(index)}
             >
               {continent.name}
-            </ListItem>
+            </ContinentItem>
           ))}
-        </List>
-        <Button onClick={next}>Suivant</Button>
-      </Container>
+          <FontAwesomeIcon
+            className="icon"
+            onClick={next}
+            icon={faCaretRight}
+          />
+        </ContinentList>
+      </ContinentContainer>{" "}
       <div className="swipe"></div>
-
       <SelectedContinent>
         <img src={selectedContinent.image} alt={selectedContinent.name} />
         {selectedContinent.countries && (
@@ -111,7 +96,8 @@ const Continent = () => {
             name={selectedCountry.name}
             content={selectedCountry.content}
             date={selectedCountry.date}
-            image={selectedCountry.image}
+            flag={selectedCountry.flag}
+            champions={selectedCountry.champions}
           />
         )}
       </SelectedContinent>
@@ -119,7 +105,7 @@ const Continent = () => {
   );
 };
 
-const Container = styled.div`
+const ContinentContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -127,7 +113,7 @@ const Container = styled.div`
   overflow: hidden;
 `;
 
-const List = styled.ul`
+const ContinentList = styled.ul`
   display: flex;
   list-style-type: none;
   padding: 0;
@@ -137,16 +123,30 @@ const List = styled.ul`
   justify-content: space-around;
   text-align: center;
   align-items: center;
+  margin: auto;
+
+  /* background-color: #f9b9b9; */
+
+  .icon {
+    color: var(--gold);
+    font-size: 30px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 `;
 
-const ListItem = styled.li`
+const ContinentItem = styled.li`
   font-size: 22px;
+  font-family: "KoHo";
   font-weight: lighter;
   color: #5d816b;
   flex: 1;
 
+
   &.center {
-    font-weight: bold;
+    font-weight: 500;
     color: #c6a785;
     font-size: 38px;
   }
@@ -156,17 +156,11 @@ const ListItem = styled.li`
   }
 `;
 
-const Button = styled.button`
-  background-color: transparent;
-  border: none;
-  color: #9c89b8;
-  font-size: 20px;
-  cursor: pointer;
-`;
-
 const SelectedContinent = styled.div`
   margin-top: 20px;
   text-align: center;
+
+  /* background-color: #d1c0f7; */
 
   img {
     max-width: 100%;
@@ -183,15 +177,17 @@ const SelectedContinent = styled.div`
 
 const CountryList = styled.div`
   display: flex;
-  margin: auto;
+  margin: 30px auto auto auto;
   justify-content: flex-start;
   overflow-x: auto;
-  width: 50%;
-  gap: 30px;
+  width: 90%;
+  gap: 20px;
+
+  /* background-color: #e7f7c0; */
 
   /* Scrollbar */
   &::-webkit-scrollbar {
-    height: 8px;
+    height: 6px;
     border-radius: 12px;
     background-color: #dddddd;
   }
