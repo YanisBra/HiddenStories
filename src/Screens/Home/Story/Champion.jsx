@@ -28,7 +28,6 @@ const Champion = ({ name, image, content, video }) => {
 
 const Container = styled.div`
   padding: 10px;
-  max-width: 1400px;
   margin: auto auto 20px auto;
 
   h2 {
@@ -59,10 +58,10 @@ const Content = styled.div`
   margin-top: 30px;
 
   p {
-    font-weight: lighter;
+    font-weight: 300;
     font-size: 12px;
     @media (min-width: 800px) {
-      font-size: 1rem;
+      font-size: 17px;
     }
   }
 `;

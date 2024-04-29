@@ -9,7 +9,7 @@ const internationalData = [
         content:
           "Lionel Messi est synonyme de FIFA FIFPRO World 11 masculin. Lorsque l’on parle de la surprenante longévité de son jeu au top des performances, le onze idéal est une parfaite référence ",
         date: "1990, 1924, 2024",
-        image: "../public/img/International/Europe/espagne.svg",
+        image: "/img/International/Europe/espagne.svg",
         flag: "https://picsum.photos/95/55",
         champions: [
           {

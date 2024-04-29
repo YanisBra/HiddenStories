@@ -21,17 +21,19 @@ const Container = styled.div`
 `;
 
 const CardContainer = styled.div`
-  width: 170px;
+  width: 200px;
+  height: 250px;
   background-color: ${({ iseven }) =>
     iseven === "true" ? "white" : "var(--green)"};
   color: ${({ iseven }) => (iseven === "true" ? "var(--green)" : "white")};
   border: ${({ iseven }) =>
     iseven === "true" ? "1px solid var(--green)" : "none"};
-  padding: 10px;
+  padding: 20px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
   border-radius: 6px;
   @media (min-width: 800px) {
-    width: 200px;
+    width: 290px;
+    height: 300px;
   }
 `;
 
@@ -39,7 +41,6 @@ const CardTitle = styled.h5`
   font-size: 17px;
   font-weight: bold;
   margin-bottom: 10px;
-  font-family: "KoHo";
   @media (min-width: 800px) {
     font-size: 1.5rem;
   }
@@ -66,6 +67,10 @@ const NumberOverlay = styled.p`
   font-weight: 500;
   color: var(--gold);
   z-index: -1;
+  @media (min-width: 800px) {
+    font-size: 4rem;
+    top: -60px;
+  }
 `;
 
 export default GreenCard;

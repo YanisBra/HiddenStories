@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Navbar2 from "../../Components/Navbar";
 import LandingPage from "./LandingPage/LandingPage";
 import International from "./International/Intenational";
 import History from "./History/History";
 import France from "./France/France";
 import Story from "./Story/Story";
 import News from "./News/News";
-import { Navbar, Nav } from "react-bootstrap"; // Import des éléments de Bootstrap
+import { Navbar, Nav } from "react-bootstrap";
 
 const HomeScreen = () => {
   return (
@@ -25,7 +24,6 @@ const HomeScreen = () => {
           </Nav>
         </Navbar.Collapse>
       </CustomNavbar>
-      {/* <Navbar2 /> */}
       <LandingPage />
       <History />
       <International />
@@ -38,6 +36,7 @@ const HomeScreen = () => {
 
 const Container = styled.div`
   font-family: "Barlow";
+  cursor: url("images/cursor.png"), pointer;
 `;
 
 // Style de la barre de navigation design

@@ -12,7 +12,7 @@ const SectionHeader = ({ title, description }) => {
 const Header = styled.div`
   margin: 50px auto;
   text-align: center;
-  max-width: 1400px;
+  max-width: 1200px;
 
   h1 {
     font-size: 30px;
@@ -23,14 +23,16 @@ const Header = styled.div`
     background-repeat: no-repeat;
     background-position: center center;
     margin-bottom: 30px;
+    @media (min-width: 800px) {
+      font-size: 35px;
+    }
   }
 
   p {
     margin: auto;
     font-size: 14px;
-    font-weight: 300;
     @media (min-width: 800px) {
-      font-size: 1rem;
+      font-size: 19px;
     }
   }
 `;

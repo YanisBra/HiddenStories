@@ -52,15 +52,15 @@ const FirstContainer = styled.div`
       font-family: "KoHo";
       font-weight: bold;
       @media (min-width: 800px) {
-        font-size: 1.5rem;
+        font-size: 26px;
       }
     }
 
     .content {
       font-size: 12px;
-      font-weight: lighter;
+      font-weight: 300;
       @media (min-width: 800px) {
-        font-size: 1rem;
+        font-size: 17px;
       }
     }
 

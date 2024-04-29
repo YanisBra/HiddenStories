@@ -110,7 +110,8 @@ const ContinentContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1200px;
+  margin: auto;
   overflow: hidden;
 `;
 
@@ -125,10 +126,6 @@ const ContinentList = styled.ul`
   text-align: center;
   align-items: center;
   margin: auto;
-  @media (min-width: 800px) {
-    max-width: 1400px;
-    width: 90%;
-  }
 
   /* background-color: #f9b9b9; */
 

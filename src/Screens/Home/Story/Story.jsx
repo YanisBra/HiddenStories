@@ -25,6 +25,8 @@ const Container = styled.div`
   margin-top: 50px;
   text-align: center;
   padding: 10px;
+  max-width: 1200px;
+  margin: 50px auto auto auto;
 `;
 
 const Header = styled.div`
