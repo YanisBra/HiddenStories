@@ -26,7 +26,7 @@ const Container = styled.div`
   height: 100vh;
   max-height: 720px;
   display: flex;
-  background-image: url("../public/img/background.gif");
+  background-image: url("/img/background.gif");
   overflow: hidden;
 `;
 

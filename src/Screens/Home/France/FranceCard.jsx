@@ -7,7 +7,7 @@ const GreenCard = ({ number, title, content }) => {
   return (
     <Container>
       <NumberOverlay>{number}</NumberOverlay>
-      <CardContainer iseven={iseven ? "true" : "false"}>
+      <CardContainer className={iseven ? "even" : ""}>
         <CardTitle>{title}</CardTitle>
         <CardContent>{content}</CardContent>
       </CardContainer>
@@ -23,17 +23,20 @@ const Container = styled.div`
 const CardContainer = styled.div`
   width: 200px;
   height: 250px;
-  background-color: ${({ iseven }) =>
-    iseven === "true" ? "white" : "var(--green)"};
-  color: ${({ iseven }) => (iseven === "true" ? "var(--green)" : "white")};
-  border: ${({ iseven }) =>
-    iseven === "true" ? "1px solid var(--green)" : "none"};
+  background-color: var(--green);
+  color: white;
   padding: 20px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
   border-radius: 6px;
   @media (min-width: 800px) {
     width: 290px;
     height: 300px;
+  }
+
+  &.even {
+    border: 1px solid var(--green);
+    background-color: white;
+    color: var(--green);
   }
 `;
 

@@ -78,7 +78,11 @@ const Continent = () => {
       </ContinentContainer>{" "}
       <div className="swipe"></div>
       <SelectedContinent>
-        <img src={selectedContinent.image} alt={selectedContinent.name} />
+        <img
+          className="continent-img"
+          src={selectedContinent.image}
+          alt={selectedContinent.name}
+        />
         {selectedContinent.countries && (
           <CountryList>
             {selectedContinent.countries.map((country, index) => (
@@ -94,6 +98,7 @@ const Continent = () => {
         {selectedCountry && (
           <CountryInfo
             name={selectedCountry.name}
+            city={selectedCountry.city}
             content={selectedCountry.content}
             date={selectedCountry.date}
             flag={selectedCountry.flag}
@@ -168,17 +173,17 @@ const SelectedContinent = styled.div`
   text-align: center;
   width: 100%;
   margin: auto;
+  background-image: url({selectedContient.image});
+
   @media (min-width: 800px) {
     width: 60%;
   }
-  /* background-image:{selectedContinent.image}; */
-
   /* background-color: #d1c0f7; */
 
-  img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
+  .continent-img {
+    @media (min-width: 800px) {
+      width: 80%;
+    }
   }
 
   h2 {
@@ -195,6 +200,10 @@ const CountryList = styled.div`
   overflow-x: auto;
   width: 100%;
   gap: 20px;
+
+  @media (min-width: 1200px) {
+    justify-content: center;
+  }
 
   /* background-color: #e7f7c0; */
 

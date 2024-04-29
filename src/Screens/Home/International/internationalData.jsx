@@ -1,15 +1,17 @@
 const internationalData = [
   {
     name: "Europe",
-    image: "../public/img/International/Europe/europe.svg",
+    image: "/img/International/Europe/europe.svg",
     content: "Contenu pour l'Europe...",
     countries: [
       {
         name: "FRANCE",
+        city: "Paris",
         content:
           "Lionel Messi est synonyme de FIFA FIFPRO World 11 masculin. Lorsque l’on parle de la surprenante longévité de son jeu au top des performances, le onze idéal est une parfaite référence ",
         date: "1990, 1924, 2024",
-        image: "/img/International/Europe/espagne.svg",
+        image1: "/img/International/Europe/espagne.svg",
+        image2: "/img/International/Europe/espagne-white.svg",
         flag: "https://picsum.photos/95/55",
         champions: [
           {
@@ -28,10 +30,12 @@ const internationalData = [
       },
       {
         name: "ESPAGNE",
+        city: "Barcelone",
         content:
           "Lionel Messi est synonyme de FIFA FIFPRO World 11 masculin. Lorsque l’on parle de la surprenante longévité de son jeu au top des performances, le onze idéal est une parfaite référence ",
         date: "1992",
-        image: "https://picsum.photos/75/50",
+        image1: "/img/International/Europe/espagne.svg",
+        image2: "/img/International/Europe/espagne-white.svg",
         flag: "https://picsum.photos/95/55",
         champions: [
           {
@@ -45,11 +49,13 @@ const internationalData = [
         ],
       },
       {
-        name: "Italie",
+        name: "ITALIE",
+        city: "Rome",
         content:
           "Lionel Messi est synonyme de FIFA FIFPRO World 11 masculin. Lorsque l’on parle de la surprenante longévité de son jeu au top des performances, le onze idéal est une parfaite référence ",
         date: "1960",
-        image: "https://picsum.photos/75/50",
+        image1: "/img/International/Europe/espagne.svg",
+        image2: "/img/International/Europe/espagne-white.svg",
         flag: "https://picsum.photos/95/55",
         champions: [
           {
@@ -67,7 +73,8 @@ const internationalData = [
         content:
           "Lionel Messi est synonyme de FIFA FIFPRO World 11 masculin. Lorsque l’on parle de la surprenante longévité de son jeu au top des performances, le onze idéal est une parfaite référence ",
         date: "1960",
-        image: "https://picsum.photos/75/50",
+        image1: "/img/International/Europe/espagne.svg",
+        image2: "/img/International/Europe/espagne-white.svg",
         flag: "https://picsum.photos/95/55",
         champions: [
           {
@@ -85,7 +92,8 @@ const internationalData = [
         content:
           "Lionel Messi est synonyme de FIFA FIFPRO World 11 masculin. Lorsque l’on parle de la surprenante longévité de son jeu au top des performances, le onze idéal est une parfaite référence ",
         date: "1960",
-        image: "https://picsum.photos/75/50",
+        image1: "/img/International/Europe/espagne.svg",
+        image2: "/img/International/Europe/espagne-white.svg",
         flag: "https://picsum.photos/95/55",
         champions: [
           {
@@ -102,42 +110,46 @@ const internationalData = [
   },
   {
     name: "Afrique",
-    image: "../public/img/International/Afrique/afrique.svg",
+    image: "/img/International/Afrique/afrique.svg",
     content: "Contenu pour l'Afrique...",
     countries: [
       {
         name: "Maroc",
         content: "Contenu pour le Maroc...",
         date: "2024-04-25",
-        image: "https://picsum.photos/75/51",
+        image1: "/img/International/Europe/espagne.svg",
+        image2: "/img/International/Europe/espagne-white.svg",
         flag: "https://picsum.photos/95/55",
       },
       {
         name: "Kenya",
         content: "Contenu pour le Kenya...",
         date: "2024-04-25",
-        image: "https://picsum.photos/75/52",
+        image1: "/img/International/Europe/espagne.svg",
+        image2: "/img/International/Europe/espagne-white.svg",
         flag: "https://picsum.photos/95/55",
       },
     ],
   },
   {
     name: "Asie",
-    image: "../public/img/International/Asie/asie.svg",
+    image: "/img/International/Asie/asie.svg",
     content: "Contenu pour l'Asie...",
     countries: [
       {
         name: "Japon",
         content: "Contenu pour le Maroc...",
         date: "2024-04-25",
-        image: "https://picsum.photos/72/51",
+        image1: "/img/International/Europe/espagne.svg",
+        image2: "/img/International/Europe/espagne-white.svg",
         flag: "https://picsum.photos/95/55",
       },
       {
         name: "Chine",
         content: "Contenu pour le Kenya...",
         date: "2024-04-25",
-        image: "https://picsum.photos/73/51",
+        image1: "/img/International/Europe/espagne.svg",
+        image2: "/img/International/Europe/espagne-white.svg",
         flag: "https://picsum.photos/95/55",
       },
     ],
@@ -151,7 +163,8 @@ const internationalData = [
         name: "Australie",
         content: "Contenu pour le Australie...",
         date: "2024-04-25",
-        image: "https://picsum.photos/72/52",
+        image1: "/img/International/Europe/espagne.svg",
+        image2: "/img/International/Europe/espagne-white.svg",
         flag: "https://picsum.photos/95/55",
       },
     ],
@@ -165,14 +178,16 @@ const internationalData = [
         name: "Etats-Unis",
         content: "Contenu pour les Etats Unis...",
         date: "2024-04-25",
-        image: "https://picsum.photos/76/51",
+        image1: "/img/International/Europe/espagne.svg",
+        image2: "/img/International/Europe/espagne-white.svg",
         flag: "https://picsum.photos/95/55",
       },
       {
         name: "Canada",
         content: "Contenu pour le Canada...",
         date: "2024-04-25",
-        image: "https://picsum.photos/75/50",
+        image1: "/img/International/Europe/espagne.svg",
+        image2: "/img/International/Europe/espagne-white.svg",
         flag: "https://picsum.photos/95/55",
       },
     ],

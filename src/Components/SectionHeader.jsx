@@ -19,7 +19,7 @@ const Header = styled.div`
     font-weight: bold;
     color: var(--green);
     font-family: "KoHo";
-    background-image: url("../public/img/titlebg.png");
+    background-image: url("/img/titlebg.png");
     background-repeat: no-repeat;
     background-position: center center;
     margin-bottom: 30px;

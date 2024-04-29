@@ -20,13 +20,12 @@ const HomeScreen = () => {
             <NavLink to="#international">International</NavLink>
             <NavLink to="#france">France</NavLink>
             <NavLink to="#story">Story</NavLink>
-            {/* Ajoute d'autres liens ici si nécessaire */}
           </Nav>
         </Navbar.Collapse>
       </CustomNavbar>
       <LandingPage />
-      <History />
-      <International />
+      <History id="history" />
+      <International id="international" />
       <France />
       <Story />
       {/* <News /> */}
@@ -36,7 +35,6 @@ const HomeScreen = () => {
 
 const Container = styled.div`
   font-family: "Barlow";
-  cursor: url("images/cursor.png"), pointer;
 `;
 
 // Style de la barre de navigation design
@@ -56,7 +54,6 @@ const CustomNavbar = styled(Navbar)`
   .ml-auto {
     margin-left: auto;
   }
-  /* Couleur de fond semi-transparente */
 `;
 
 // Style des liens de navigation

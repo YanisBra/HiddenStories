@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const CountryInfo = ({ name, content, date, flag, champions }) => {
+const CountryInfo = ({ name, city, content, date, flag, champions }) => {
   return (
     <Container>
       <Header>
@@ -15,7 +15,9 @@ const CountryInfo = ({ name, content, date, flag, champions }) => {
         </div>
       </Header>
       <Content>
-        <h2 className="title">{name}</h2>
+        <h2 className="title">
+          {name}, {city}
+        </h2>
         <p>{content}</p>
         {/* Affiche championContainer si chmapions n'est pas vide */}
         {champions?.length > 0 && (
