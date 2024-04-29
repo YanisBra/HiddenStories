@@ -38,26 +38,36 @@ const CountryInfo = ({ name, content, date, flag, champions }) => {
 
 const Container = styled.div`
   margin: 40px auto;
-  width: 90%;
+  width: 100%;
   border-radius: 12px;
   background-color: rgba(93, 129, 107, 0.07);
   padding: 10px;
   text-align: left;
 
   p {
-    font-size: 8px;
+    font-size: 12px;
+    @media (min-width: 800px) {
+      font-size: 1rem;
+    }
   }
   .title {
     color: var(--gold);
     font-family: "KoHo";
     font-weight: bold;
-    font-size: 10px;
+    font-size: 14px;
+    @media (min-width: 800px) {
+      font-size: 1rem;
+    }
   }
 `;
 
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-bottom: 30px;
+  @media (min-width: 800px) {
+    margin-bottom: 60px;
+  }
 
   .countryContainer {
   }
@@ -69,7 +79,10 @@ const Content = styled.div`
   margin-top: 10px;
 
   .championContainer {
-    margin-top: 20px;
+    margin-top: 30px;
+    @media (min-width: 800px) {
+      margin-top: 60px;
+    }
 
     .championList {
       display: flex;

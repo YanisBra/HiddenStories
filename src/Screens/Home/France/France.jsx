@@ -29,11 +29,13 @@ const France = () => {
 
 const Container = styled.div`
   margin-top: -40px;
-  padding: 10px;
+  padding: 20px;
 `;
 
 const CardGrid = styled.div`
   width: 90%;
+  max-width: 800px;
+  /* background-color: red; */
   margin: auto;
   display: grid;
   grid-template-columns: repeat(

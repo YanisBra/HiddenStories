@@ -1,125 +1,99 @@
 const internationalData = [
   {
     name: "Europe",
-    image: "https://picsum.photos/370/240",
+    image: "../public/img/International/Europe/europe.svg",
     content: "Contenu pour l'Europe...",
     countries: [
       {
-        name: "France",
+        name: "FRANCE",
         content:
           "Lionel Messi est synonyme de FIFA FIFPRO World 11 masculin. Lorsque l’on parle de la surprenante longévité de son jeu au top des performances, le onze idéal est une parfaite référence ",
-        date: "2024-04-25",
+        date: "1990, 1924, 2024",
+        image: "../public/img/International/Europe/espagne.svg",
+        flag: "https://picsum.photos/95/55",
+        champions: [
+          {
+            name: "Luca Gotti",
+            image: "https://picsum.photos/90/60",
+          },
+          {
+            name: "De Rossi",
+            image: "https://picsum.photos/91/60",
+          },
+          {
+            name: "Simon Gauzy",
+            image: "https://picsum.photos/91/60",
+          },
+        ],
+      },
+      {
+        name: "ESPAGNE",
+        content:
+          "Lionel Messi est synonyme de FIFA FIFPRO World 11 masculin. Lorsque l’on parle de la surprenante longévité de son jeu au top des performances, le onze idéal est une parfaite référence ",
+        date: "1992",
         image: "https://picsum.photos/75/50",
         flag: "https://picsum.photos/95/55",
         champions: [
           {
-            name: "Jean",
+            name: "San Sebastian",
             image: "https://picsum.photos/90/60",
           },
           {
-            name: "John",
+            name: "Technigen Linares",
             image: "https://picsum.photos/91/60",
           },
         ],
       },
       {
-        name: "Belgique",
-        content: "Contenu pour le Belgique...",
-        date: "2024-04-25",
-        image: "https://picsum.photos/76/50",
+        name: "Italie",
+        content:
+          "Lionel Messi est synonyme de FIFA FIFPRO World 11 masculin. Lorsque l’on parle de la surprenante longévité de son jeu au top des performances, le onze idéal est une parfaite référence ",
+        date: "1960",
+        image: "https://picsum.photos/75/50",
         flag: "https://picsum.photos/95/55",
         champions: [
           {
-            name: "Jean",
+            name: "San Sebastian",
             image: "https://picsum.photos/90/60",
           },
           {
-            name: "John",
-            image: "https://picsum.photos/91/60",
-          },
-        ],
-      },
-      {
-        name: "Pays-Bas",
-        content: "Contenu pour les Pays-Bas...",
-        date: "2024-04-25",
-        image: "https://picsum.photos/77/50",
-        flag: "https://picsum.photos/95/55",
-        champions: [
-          {
-            name: "Jean",
-            image: "https://picsum.photos/90/60",
-          },
-          {
-            name: "John",
+            name: "Technigen Linares",
             image: "https://picsum.photos/91/60",
           },
         ],
       },
       {
         name: "Allemagne",
-        content: "Contenu pour l'Allemagne...",
-        date: "2024-04-25",
-        image: "https://picsum.photos/75/51",
+        content:
+          "Lionel Messi est synonyme de FIFA FIFPRO World 11 masculin. Lorsque l’on parle de la surprenante longévité de son jeu au top des performances, le onze idéal est une parfaite référence ",
+        date: "1960",
+        image: "https://picsum.photos/75/50",
         flag: "https://picsum.photos/95/55",
         champions: [
           {
-            name: "Jean",
+            name: "San Sebastian",
             image: "https://picsum.photos/90/60",
           },
           {
-            name: "John",
+            name: "Technigen Linares",
             image: "https://picsum.photos/91/60",
           },
         ],
       },
       {
-        name: "Italie",
-        content: "Contenu pour l'Italie...",
-        date: "2024-04-25",
-        image: "https://picsum.photos/76/51",
+        name: "Grece",
+        content:
+          "Lionel Messi est synonyme de FIFA FIFPRO World 11 masculin. Lorsque l’on parle de la surprenante longévité de son jeu au top des performances, le onze idéal est une parfaite référence ",
+        date: "1960",
+        image: "https://picsum.photos/75/50",
         flag: "https://picsum.photos/95/55",
         champions: [
           {
-            name: "Jean",
+            name: "San Sebastian",
             image: "https://picsum.photos/90/60",
           },
           {
-            name: "John",
-            image: "https://picsum.photos/91/60",
-          },
-        ],
-      },
-      {
-        name: "Italie",
-        content: "Contenu pour l'Italie...",
-        date: "2024-04-25",
-        image: "https://picsum.photos/76/57",
-        flag: "https://picsum.photos/95/55",
-        champions: [
-          {
-            name: "Jean",
-            image: "https://picsum.photos/90/60",
-          },
-          {
-            name: "John",
-            image: "https://picsum.photos/91/60",
-          },
-        ],
-      },
-      {
-        name: "Italie",
-        content: "Contenu pour l'Italie...",
-        date: "2024-04-25",
-        image: "https://picsum.photos/77/51",
-        flag: "https://picsum.photos/95/55",
-        champions: [
-          {
-            name: "Jean",
-            image: "https://picsum.photos/90/60",
-          },
-          {
-            name: "John",
+            name: "Technigen Linares",
             image: "https://picsum.photos/91/60",
           },
         ],
@@ -128,7 +102,7 @@ const internationalData = [
   },
   {
     name: "Afrique",
-    image: "https://picsum.photos/375/240",
+    image: "../public/img/International/Afrique/afrique.svg",
     content: "Contenu pour l'Afrique...",
     countries: [
       {
@@ -149,7 +123,7 @@ const internationalData = [
   },
   {
     name: "Asie",
-    image: "https://picsum.photos/371/242",
+    image: "../public/img/International/Asie/asie.svg",
     content: "Contenu pour l'Asie...",
     countries: [
       {

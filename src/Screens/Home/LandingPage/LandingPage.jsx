@@ -37,6 +37,7 @@ const LeftContainer = styled.div`
   display: flex;
   align-items: center;
   color: white;
+  padding-left: 10px;
 
   .ping {
     text-align: right;

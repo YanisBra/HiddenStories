@@ -16,7 +16,7 @@ const GreenCard = ({ number, title, content }) => {
 };
 
 const Container = styled.div`
-  margin: auto;
+  margin: auto auto 20px auto;
   position: relative;
 `;
 
@@ -30,6 +30,9 @@ const CardContainer = styled.div`
   padding: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
   border-radius: 6px;
+  @media (min-width: 800px) {
+    width: 200px;
+  }
 `;
 
 const CardTitle = styled.h5`
@@ -37,11 +40,17 @@ const CardTitle = styled.h5`
   font-weight: bold;
   margin-bottom: 10px;
   font-family: "KoHo";
+  @media (min-width: 800px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const CardContent = styled.p`
-  font-size: 11px;
+  font-size: 12px;
   font-weight: lighter;
+  @media (min-width: 800px) {
+    font-size: 1rem;
+  }
 `;
 
 const NumberOverlay = styled.p`

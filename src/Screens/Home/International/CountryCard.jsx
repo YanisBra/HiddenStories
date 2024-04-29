@@ -15,8 +15,8 @@ const StyledCard = styled.div`
   border-radius: 8px;
   padding: 10px;
   margin: 10px 10px 20px 10px;
-  min-width: 90px;
-  height: 100px;
+  min-width: 100px;
+  height: 120px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
@@ -28,10 +28,10 @@ const StyledCard = styled.div`
     props.selected ? "1px solid white" : "1px solid var(--green)"};
 
   img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    background-color: red;
+    /* background-color: red; */
+    svg {
+      fill: #fff;
+    }
   }
 
   p {

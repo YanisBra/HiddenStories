@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Container } from "react-bootstrap"; // Import des composants Bootstrap
+import { Container } from "react-bootstrap"; // Import des composants Bootstrap
 import { onAuthStateChanged } from "firebase/auth";
 import LoginScreen from "./Login";
 import { FIREBASE_AUTH } from "../../Config/firebase";

@@ -45,7 +45,7 @@ const History = () => {
 };
 
 const HistoryContainer = styled.div`
-  padding: 10px;
+  padding: 20px;
   /* background-color: #76917c; */
 `;
 

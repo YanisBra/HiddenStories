@@ -110,6 +110,7 @@ const ContinentContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  max-width: 1400px;
   overflow: hidden;
 `;
 
@@ -124,6 +125,10 @@ const ContinentList = styled.ul`
   text-align: center;
   align-items: center;
   margin: auto;
+  @media (min-width: 800px) {
+    max-width: 1400px;
+    width: 90%;
+  }
 
   /* background-color: #f9b9b9; */
 
@@ -138,16 +143,22 @@ const ContinentList = styled.ul`
 `;
 
 const ContinentItem = styled.li`
-  font-size: 22px;
+  font-size: 18px;
   font-family: "KoHo";
   font-weight: lighter;
   color: #5d816b;
   flex: 1;
+  @media (min-width: 800px) {
+    font-size: 1.5rem;
+  }
 
   &.center {
     font-weight: 500;
     color: #c6a785;
-    font-size: 38px;
+    font-size: 30px;
+    @media (min-width: 800px) {
+      font-size: 2.5rem;
+    }
   }
 
   &:hover {
@@ -158,6 +169,12 @@ const ContinentItem = styled.li`
 const SelectedContinent = styled.div`
   margin-top: 20px;
   text-align: center;
+  width: 100%;
+  margin: auto;
+  @media (min-width: 800px) {
+    width: 60%;
+  }
+  /* background-image:{selectedContinent.image}; */
 
   /* background-color: #d1c0f7; */
 
@@ -179,7 +196,7 @@ const CountryList = styled.div`
   margin: 30px auto auto auto;
   justify-content: flex-start;
   overflow-x: auto;
-  width: 90%;
+  width: 100%;
   gap: 20px;
 
   /* background-color: #e7f7c0; */

@@ -10,9 +10,9 @@ const SectionHeader = ({ title, description }) => {
 };
 
 const Header = styled.div`
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin: 50px auto;
   text-align: center;
+  max-width: 1400px;
 
   h1 {
     font-size: 30px;
@@ -22,12 +22,16 @@ const Header = styled.div`
     background-image: url("../public/img/titlebg.png");
     background-repeat: no-repeat;
     background-position: center center;
+    margin-bottom: 30px;
   }
 
   p {
-    font-size: 12px;
+    margin: auto;
+    font-size: 14px;
     font-weight: 300;
-    font-style: normal;
+    @media (min-width: 800px) {
+      font-size: 1rem;
+    }
   }
 `;
 

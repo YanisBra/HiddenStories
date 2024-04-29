@@ -15,7 +15,8 @@ const International = () => {
 };
 
 const InternationalContainer = styled.div`
-  padding: 10px;
+  margin-top: 20px;
+  padding: 20px;
   /* background-color: #cfdeec; */
 `;
 

@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-const Athlete = ({ name, image, content, video }) => {
+const Champion = ({ name, image, content, video }) => {
   return (
     <Container>
-      <h3>{name}</h3>
+      <h2>{name}</h2>
       <ImageContainer>
         <img className="image" src={image} alt={name} />
-        <iframe
+        {/* <iframe
           className="video"
           width="190"
           height="108"
@@ -17,7 +17,7 @@ const Athlete = ({ name, image, content, video }) => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
-        ></iframe>
+        ></iframe> */}
       </ImageContainer>
       <Content>
         <p>{content}</p>
@@ -28,17 +28,22 @@ const Athlete = ({ name, image, content, video }) => {
 
 const Container = styled.div`
   padding: 10px;
-  margin-bottom: 20px;
+  max-width: 1400px;
+  margin: auto auto 20px auto;
+
+  h2 {
+    font-family: "KoHo";
+    font-weight: bold;
+    font-size: 22;
+    @media (min-width: 800px) {
+      font-size: 2rem;
+    }
+  }
 `;
 
 const ImageContainer = styled.div`
   position: relative;
-  width: 400px;
-  height: 400px;
-  margin: auto;
-
-  .image {
-  }
+  margin-top: 20px;
 
   .video {
     position: absolute;
@@ -51,12 +56,15 @@ const ImageContainer = styled.div`
 `;
 
 const Content = styled.div`
-  margin-top: 70px;
+  margin-top: 30px;
 
   p {
     font-weight: lighter;
-    font-size: 1rem;
+    font-size: 12px;
+    @media (min-width: 800px) {
+      font-size: 1rem;
+    }
   }
 `;
 
-export default Athlete;
+export default Champion;

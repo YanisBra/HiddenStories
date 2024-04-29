@@ -14,7 +14,6 @@ const LeftContent = ({
       <div className="textContainer">
         <p className="title">{title}</p>
         <p className="content">{content}</p>
-        <button>Click me</button>
         <div className="years">
           {years.map((year) => (
             <p key={year}>{year}</p>
@@ -42,32 +41,26 @@ const FirstContainer = styled.div`
   .textContainer {
     width: 33%;
     text-align: right;
-    padding: 6px;
+    padding-right: 12px;
     /* background-color: #c68d8d; */
     overflow: hidden;
 
     .title {
-      margin-top: 15px;
+      margin-top: 10px;
       font-size: 21px;
       color: #c6a785;
       font-family: "KoHo";
       font-weight: bold;
+      @media (min-width: 800px) {
+        font-size: 1.5rem;
+      }
     }
 
     .content {
       font-size: 12px;
       font-weight: lighter;
-    }
-
-    button {
-      background-color: #d9d9d9;
-      border: none;
-      border-radius: 4px;
-      font-size: 12px;
-      padding: 6px;
-
-      &:hover {
-        cursor: pointer;
+      @media (min-width: 800px) {
+        font-size: 1rem;
       }
     }
 
@@ -75,8 +68,11 @@ const FirstContainer = styled.div`
       margin-top: 10px;
       color: #b3b3b3;
       font-weight: lighter;
-      font-family: "Inter";
+      font-family: "Kumar One";
       font-size: 12px;
+      @media (min-width: 800px) {
+        font-size: 1rem;
+      }
       p {
         margin-bottom: 10px;
       }
@@ -89,7 +85,9 @@ const FirstContainer = styled.div`
   }
 
   .dateContainer {
-    width: 120px;
+    width: 33%;
+    min-width: 115px;
+    max-width: 150px;
     background-color: #5d816b;
 
     p {
@@ -101,7 +99,6 @@ const FirstContainer = styled.div`
     }
 
     .dateTop {
-      margin-top: 20px;
       font-size: 66px;
     }
   }
