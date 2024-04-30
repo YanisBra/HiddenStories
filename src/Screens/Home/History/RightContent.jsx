@@ -113,6 +113,10 @@ const FirstContainer = styled.div`
     width: 33%;
     padding: 6px;
     z-index: 1;
+
+    @media (min-width: 800px) {
+      justify-content: flex-end;
+    }
   }
 `;
 

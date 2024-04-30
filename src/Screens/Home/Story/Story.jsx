@@ -4,7 +4,7 @@ import storiesData from "./storiesData";
 
 const Story = () => {
   return (
-    <Container>
+    <StoryContainer id="story">
       <Header>
         <h1>Champions de France</h1>
       </Header>
@@ -17,11 +17,11 @@ const Story = () => {
           video={item.video}
         />
       ))}
-    </Container>
+    </StoryContainer>
   );
 };
 
-const Container = styled.div`
+const StoryContainer = styled.div`
   margin-top: 50px;
   text-align: center;
   padding: 10px;

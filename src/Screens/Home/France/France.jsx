@@ -5,7 +5,7 @@ import Card from "./FranceCard";
 
 const France = () => {
   return (
-    <Container>
+    <FranceContainer id="france">
       <SectionHeader
         title="FRANCE PING PONG"
         description="Le tennis de table a été introduit en France à la fin du 19ème siècle,
@@ -23,11 +23,11 @@ const France = () => {
           />
         ))}
       </CardGrid>
-    </Container>
+    </FranceContainer>
   );
 };
 
-const Container = styled.div`
+const FranceContainer = styled.div`
   margin-top: -40px;
   padding: 20px;
 `;

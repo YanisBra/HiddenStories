@@ -8,7 +8,7 @@ const historyData = [
     dateBot: "26",
     years: ["1990", "1993", "1994"],
     lastYear: "1996",
-    image: "../public/img/test.png",
+    image: "/img/test.png",
   },
   {
     id: "2",
@@ -19,7 +19,7 @@ const historyData = [
     dateBot: "52",
     years: ["2000", "2001", "2002"],
     lastYear: "2004",
-    image: "../public/img/test.png",
+    image: "/img/test.png",
   },
   {
     id: "3",
@@ -30,7 +30,7 @@ const historyData = [
     dateBot: "88",
     years: ["2000", "2001", "2002"],
     lastYear: "2004",
-    image: "../public/img/test.png",
+    image: "/img/test.png",
   },
   {
     id: "4",
@@ -41,7 +41,7 @@ const historyData = [
     dateBot: "92",
     years: ["2000", "2001", "2002"],
     lastYear: "2004",
-    image: "../public/img/test.png",
+    image: "/img/test.png",
   },
   {
     id: "5",
@@ -52,7 +52,7 @@ const historyData = [
     dateBot: "08",
     years: ["2000", "2001", "2002"],
     lastYear: "2004",
-    image: "../public/img/test.png",
+    image: "/img/test.png",
   },
 ];
 

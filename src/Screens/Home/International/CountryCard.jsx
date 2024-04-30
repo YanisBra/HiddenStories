@@ -31,10 +31,7 @@ const StyledCard = styled.div`
     props.selected ? "1px solid white" : "1px solid var(--green)"};
 
   img {
-    /* Si tu veux appliquer des styles à l'image SVG (fill, etc.) */
-    svg {
-      fill: #fff;
-    }
+    height: auto;
   }
 
   p {

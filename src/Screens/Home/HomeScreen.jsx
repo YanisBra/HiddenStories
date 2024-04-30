@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import React from "react";
 import styled from "styled-components";
 import LandingPage from "./LandingPage/LandingPage";
 import International from "./International/Intenational";
@@ -16,16 +16,16 @@ const HomeScreen = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <NavLink to="#history">History</NavLink>
-            <NavLink to="#international">International</NavLink>
-            <NavLink to="#france">France</NavLink>
-            <NavLink to="#story">Story</NavLink>
+            <NavLink href="#history">History</NavLink>
+            <NavLink href="#international">International</NavLink>
+            <NavLink href="#france">France</NavLink>
+            <NavLink href="#story">Story</NavLink>
           </Nav>
         </Navbar.Collapse>
       </CustomNavbar>
       <LandingPage />
-      <History id="history" />
-      <International id="international" />
+      <History />
+      <International />
       <France />
       <Story />
       {/* <News /> */}
@@ -37,16 +37,6 @@ const Container = styled.div`
   font-family: "Barlow";
 `;
 
-// Style de la barre de navigation design
-// const Navbar = styled.nav`
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   background-color: #333333;
-//   padding: 10px 20px;
-//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-// `;
-
 const CustomNavbar = styled(Navbar)`
   padding: 10px;
   backdrop-filter: blur(3px);
@@ -57,7 +47,7 @@ const CustomNavbar = styled(Navbar)`
 `;
 
 // Style des liens de navigation
-const NavLink = styled(Link)`
+const NavLink = styled.a`
   text-decoration: none;
   color: #ffffff;
   font-weight: 500;
@@ -65,7 +55,7 @@ const NavLink = styled(Link)`
   transition: color 0.3s ease;
 
   &:hover {
-    color: #007bff;
+    color: var(--green);
   }
 `;
 

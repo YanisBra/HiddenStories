@@ -51,7 +51,7 @@ const CardTitle = styled.h5`
 
 const CardContent = styled.p`
   font-size: 12px;
-  font-weight: lighter;
+  font-weight: 300;
   @media (min-width: 800px) {
     font-size: 1rem;
   }

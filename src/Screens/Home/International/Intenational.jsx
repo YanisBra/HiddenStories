@@ -4,7 +4,7 @@ import SectionHeader from "../../../Components/SectionHeader";
 
 const International = () => {
   return (
-    <InternationalContainer>
+    <InternationalContainer id="international">
       <SectionHeader
         title="INTERNATIONAL"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ali."

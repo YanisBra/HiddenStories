@@ -110,6 +110,9 @@ const FirstContainer = styled.div`
     justify-content: center;
     width: 33%;
     padding: 6px;
+    @media (min-width: 800px) {
+      justify-content: flex-start;
+    }
   }
 `;
 
