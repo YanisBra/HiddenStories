@@ -244,44 +244,44 @@ const internationalData = [
       },
     ],
   },
-  {
-    name: "Océanie",
-    image: "https://picsum.photos/374/242",
-    content: "Contenu pour l'Océanie...",
-    countries: [
-      {
-        name: "Australie",
-        content: "Contenu pour le Australie...",
-        date: "2024-04-25",
-        image1: "/img/International/Europe/espagne.svg",
-        image2: "/img/International/Europe/espagne-white.svg",
-        flag: "https://picsum.photos/95/55",
-      },
-    ],
-  },
-  {
-    name: "Amérique",
-    image: "https://picsum.photos/370/241",
-    content: "Contenu pour l'Amérique...",
-    countries: [
-      {
-        name: "Etats-Unis",
-        content: "Contenu pour les Etats Unis...",
-        date: "2024-04-25",
-        image1: "/img/International/Europe/espagne.svg",
-        image2: "/img/International/Europe/espagne-white.svg",
-        flag: "https://picsum.photos/95/55",
-      },
-      {
-        name: "Canada",
-        content: "Contenu pour le Canada...",
-        date: "2024-04-25",
-        image1: "/img/International/Europe/espagne.svg",
-        image2: "/img/International/Europe/espagne-white.svg",
-        flag: "https://picsum.photos/95/55",
-      },
-    ],
-  },
+  // {
+  //   name: "Océanie",
+  //   image: "https://picsum.photos/374/242",
+  //   content: "Contenu pour l'Océanie...",
+  //   countries: [
+  //     {
+  //       name: "Australie",
+  //       content: "Contenu pour le Australie...",
+  //       date: "2024-04-25",
+  //       image1: "/img/International/Europe/espagne.svg",
+  //       image2: "/img/International/Europe/espagne-white.svg",
+  //       flag: "https://picsum.photos/95/55",
+  //     },
+  //   ],
+  // },
+  // {
+  //   name: "Amérique",
+  //   image: "https://picsum.photos/370/241",
+  //   content: "Contenu pour l'Amérique...",
+  //   countries: [
+  //     {
+  //       name: "Etats-Unis",
+  //       content: "Contenu pour les Etats Unis...",
+  //       date: "2024-04-25",
+  //       image1: "/img/International/Europe/espagne.svg",
+  //       image2: "/img/International/Europe/espagne-white.svg",
+  //       flag: "https://picsum.photos/95/55",
+  //     },
+  //     {
+  //       name: "Canada",
+  //       content: "Contenu pour le Canada...",
+  //       date: "2024-04-25",
+  //       image1: "/img/International/Europe/espagne.svg",
+  //       image2: "/img/International/Europe/espagne-white.svg",
+  //       flag: "https://picsum.photos/95/55",
+  //     },
+  //   ],
+  // },
 ];
 
 export default internationalData;
