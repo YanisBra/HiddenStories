@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import LandingPage from "./LandingPage/LandingPage";
 import International from "./International/Intenational";
@@ -20,6 +21,7 @@ const HomeScreen = () => {
             <NavLink href="#international">International</NavLink>
             <NavLink href="#france">France</NavLink>
             <NavLink href="#story">Story</NavLink>
+            <NavLink href="/Admin">admin</NavLink>
           </Nav>
         </Navbar.Collapse>
       </CustomNavbar>
