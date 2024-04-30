@@ -21,7 +21,9 @@ const HomeScreen = () => {
             <NavLink href="#international">International</NavLink>
             <NavLink href="#france">France</NavLink>
             <NavLink href="#story">Story</NavLink>
-            <NavLink href="/Admin">admin</NavLink>
+            <NavLink>
+              <StyledLink to="/admin">Admin</StyledLink>
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </CustomNavbar>
@@ -59,6 +61,11 @@ const NavLink = styled.a`
   &:hover {
     color: var(--green);
   }
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
 `;
 
 export default HomeScreen;
