@@ -10,8 +10,8 @@ const internationalData = [
         content:
           "Lionel Messi est synonyme de FIFA FIFPRO World 11 masculin. Lorsque l’on parle de la surprenante longévité de son jeu au top des performances, le onze idéal est une parfaite référence ",
         date: "1990, 1924, 2024",
-        image1: "/img/International/Europe/espagne.svg",
-        image2: "/img/International/Europe/espagne-white.svg",
+        image1: "/img/International/Europe/france.svg",
+        image2: "/img/International/Europe/france-w.svg",
         flag: "https://picsum.photos/95/55",
         champions: [
           {
@@ -35,7 +35,7 @@ const internationalData = [
           "Lionel Messi est synonyme de FIFA FIFPRO World 11 masculin. Lorsque l’on parle de la surprenante longévité de son jeu au top des performances, le onze idéal est une parfaite référence ",
         date: "1992",
         image1: "/img/International/Europe/espagne.svg",
-        image2: "/img/International/Europe/espagne-white.svg",
+        image2: "/img/International/Europe/espagne-w.svg",
         flag: "https://picsum.photos/95/55",
         champions: [
           {
@@ -54,8 +54,8 @@ const internationalData = [
         content:
           "Lionel Messi est synonyme de FIFA FIFPRO World 11 masculin. Lorsque l’on parle de la surprenante longévité de son jeu au top des performances, le onze idéal est une parfaite référence ",
         date: "1960",
-        image1: "/img/International/Europe/espagne.svg",
-        image2: "/img/International/Europe/espagne-white.svg",
+        image1: "/img/International/Europe/italie.svg",
+        image2: "/img/International/Europe/italie-w.svg",
         flag: "https://picsum.photos/95/55",
         champions: [
           {
@@ -69,12 +69,53 @@ const internationalData = [
         ],
       },
       {
-        name: "Allemagne",
+        name: "ALLEMAGNE",
+        city: "Berlin",
         content:
           "Lionel Messi est synonyme de FIFA FIFPRO World 11 masculin. Lorsque l’on parle de la surprenante longévité de son jeu au top des performances, le onze idéal est une parfaite référence ",
         date: "1960",
-        image1: "/img/International/Europe/espagne.svg",
-        image2: "/img/International/Europe/espagne-white.svg",
+        image1: "/img/International/Europe/allemagne.svg",
+        image2: "/img/International/Europe/allemagne-w.svg",
+        flag: "https://picsum.photos/95/55",
+        champions: [
+          {
+            name: "San Sebastian",
+            image: "https://picsum.photos/90/60",
+          },
+          {
+            name: "Technigen Linares",
+            image: "https://picsum.photos/91/60",
+          },
+        ],
+      },
+      // {
+      //   name: "GRANDE-BRETAGNE",
+      //   city: "Londres",
+      //   content:
+      //     "Lionel Messi est synonyme de FIFA FIFPRO World 11 masculin. Lorsque l’on parle de la surprenante longévité de son jeu au top des performances, le onze idéal est une parfaite référence ",
+      //   date: "1960",
+      //   image1: "/img/International/Europe/anglais.svg",
+      //   image2: "/img/International/Europe/anglais-w.svg",
+      //   flag: "https://picsum.photos/95/55",
+      //   champions: [
+      //     {
+      //       name: "San Sebastian",
+      //       image: "https://picsum.photos/90/60",
+      //     },
+      //     {
+      //       name: "Technigen Linares",
+      //       image: "https://picsum.photos/91/60",
+      //     },
+      //   ],
+      // },
+      {
+        name: "GRECE",
+        city: "Athènes",
+        content:
+          "Lionel Messi est synonyme de FIFA FIFPRO World 11 masculin. Lorsque l’on parle de la surprenante longévité de son jeu au top des performances, le onze idéal est une parfaite référence ",
+        date: "1960",
+        image1: "/img/International/Europe/greece.svg",
+        image2: "/img/International/Europe/greece-w.svg",
         flag: "https://picsum.photos/95/55",
         champions: [
           {
@@ -88,12 +129,13 @@ const internationalData = [
         ],
       },
       {
-        name: "Grece",
+        name: "RUSSIE",
+        city: "Sotchie",
         content:
           "Lionel Messi est synonyme de FIFA FIFPRO World 11 masculin. Lorsque l’on parle de la surprenante longévité de son jeu au top des performances, le onze idéal est une parfaite référence ",
         date: "1960",
-        image1: "/img/International/Europe/espagne.svg",
-        image2: "/img/International/Europe/espagne-white.svg",
+        image1: "/img/International/Europe/russie.svg",
+        image2: "/img/International/Europe/russie-w.svg",
         flag: "https://picsum.photos/95/55",
         champions: [
           {
@@ -114,20 +156,24 @@ const internationalData = [
     content: "Contenu pour l'Afrique...",
     countries: [
       {
-        name: "Maroc",
-        content: "Contenu pour le Maroc...",
-        date: "2024-04-25",
-        image1: "/img/International/Europe/espagne.svg",
-        image2: "/img/International/Europe/espagne-white.svg",
+        name: "AFRIQUE DU SUD",
+        city: "",
+        content:
+          "Lionel Messi est synonyme de FIFA FIFPRO World 11 masculin. Lorsque l’on parle de la surprenante longévité de son jeu au top des performances, le onze idéal est une parfaite référence ",
+        date: "1960",
+        image1: "/img/International/Afrique/afrique-du-sud.svg",
+        image2: "/img/International/Afrique/afrique-du-sud-w.svg",
         flag: "https://picsum.photos/95/55",
-      },
-      {
-        name: "Kenya",
-        content: "Contenu pour le Kenya...",
-        date: "2024-04-25",
-        image1: "/img/International/Europe/espagne.svg",
-        image2: "/img/International/Europe/espagne-white.svg",
-        flag: "https://picsum.photos/95/55",
+        champions: [
+          {
+            name: "San Sebastian",
+            image: "https://picsum.photos/90/60",
+          },
+          {
+            name: "Technigen Linares",
+            image: "https://picsum.photos/91/60",
+          },
+        ],
       },
     ],
   },
@@ -137,20 +183,64 @@ const internationalData = [
     content: "Contenu pour l'Asie...",
     countries: [
       {
-        name: "Japon",
-        content: "Contenu pour le Maroc...",
-        date: "2024-04-25",
-        image1: "/img/International/Europe/espagne.svg",
-        image2: "/img/International/Europe/espagne-white.svg",
+        name: "CHINE",
+        city: "",
+        content:
+          "Lionel Messi est synonyme de FIFA FIFPRO World 11 masculin. Lorsque l’on parle de la surprenante longévité de son jeu au top des performances, le onze idéal est une parfaite référence ",
+        date: "1960",
+        image1: "/img/International/Asie/chine.svg",
+        image2: "/img/International/Asie/chine-w.svg",
         flag: "https://picsum.photos/95/55",
+        champions: [
+          {
+            name: "San Sebastian",
+            image: "https://picsum.photos/90/60",
+          },
+          {
+            name: "Technigen Linares",
+            image: "https://picsum.photos/91/60",
+          },
+        ],
       },
       {
-        name: "Chine",
-        content: "Contenu pour le Kenya...",
-        date: "2024-04-25",
-        image1: "/img/International/Europe/espagne.svg",
-        image2: "/img/International/Europe/espagne-white.svg",
+        name: "JAPON",
+        city: "",
+        content:
+          "Lionel Messi est synonyme de FIFA FIFPRO World 11 masculin. Lorsque l’on parle de la surprenante longévité de son jeu au top des performances, le onze idéal est une parfaite référence ",
+        date: "1960",
+        image1: "/img/International/Asie/japon.svg",
+        image2: "/img/International/Asie/japon-w.svg",
         flag: "https://picsum.photos/95/55",
+        champions: [
+          {
+            name: "San Sebastian",
+            image: "https://picsum.photos/90/60",
+          },
+          {
+            name: "Technigen Linares",
+            image: "https://picsum.photos/91/60",
+          },
+        ],
+      },
+      {
+        name: "CORÉE DU SUD",
+        city: "",
+        content:
+          "Lionel Messi est synonyme de FIFA FIFPRO World 11 masculin. Lorsque l’on parle de la surprenante longévité de son jeu au top des performances, le onze idéal est une parfaite référence ",
+        date: "1960",
+        image1: "/img/International/Asie/coree-du-sud.svg",
+        image2: "/img/International/Asie/coree-du-sud-w-w.svg",
+        flag: "https://picsum.photos/95/55",
+        champions: [
+          {
+            name: "San Sebastian",
+            image: "https://picsum.photos/90/60",
+          },
+          {
+            name: "Technigen Linares",
+            image: "https://picsum.photos/91/60",
+          },
+        ],
       },
     ],
   },
