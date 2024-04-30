@@ -31,7 +31,7 @@ const StyledCard = styled.div`
     props.selected ? "1px solid white" : "1px solid var(--green)"};
 
   img {
-    height: auto;
+    height: 80%;
   }
 
   p {
