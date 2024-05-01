@@ -13,7 +13,6 @@ const LeftContent = ({
     <FirstContainer>
       <div className="imageContainer">
         <img src={image} />
-        {/* <p>Image</p> */}
       </div>
       <div className="dateContainer">
         <p className="dateTop">{dateTop}</p>
@@ -42,7 +41,6 @@ const FirstContainer = styled.div`
   .textContainer {
     width: 33%;
     padding-left: 12px;
-    /* background-color: #c68d8d; */
     overflow: hidden;
 
     .title {
@@ -106,7 +104,6 @@ const FirstContainer = styled.div`
   }
 
   .imageContainer {
-    /* background-color: #7593b4; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -114,8 +111,15 @@ const FirstContainer = styled.div`
     padding: 6px;
     z-index: 1;
 
+    img {
+      max-width: 60vw;
+    }
+
     @media (min-width: 800px) {
       justify-content: flex-end;
+      img {
+        max-width: 30vw;
+      }
     }
   }
 `;

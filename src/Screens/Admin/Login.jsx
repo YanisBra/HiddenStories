@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FIREBASE_AUTH } from "../../Config/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { Form, Button, Spinner, Container, Row, Col } from "react-bootstrap"; // Import des composants Bootstrap
+import { Form, Button, Spinner, Container, Row, Col } from "react-bootstrap";
 
 const LoginScreen = () => {
   const auth = FIREBASE_AUTH;
@@ -10,7 +10,6 @@ const LoginScreen = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // Connexion d'un utilisateur
   const signIn = async () => {
     setLoading(true);
     try {
@@ -27,23 +26,23 @@ const LoginScreen = () => {
     <Container>
       <Row className="justify-content-center mt-5">
         <Col md={6}>
-          <h2 className="text-center mb-4">LoginScreen</h2>
+          <h2 className="text-center mb-4">Admin</h2>
           <Form>
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Email</Form.Label>
               <Form.Control
                 type="email"
-                placeholder="Enter email"
+                placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
             </Form.Group>
 
             <Form.Group controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
+              <Form.Label>Mot de passe</Form.Label>
               <Form.Control
                 type="password"
-                placeholder="Password"
+                placeholder="Mot de passe"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -67,7 +66,7 @@ const LoginScreen = () => {
             )}
 
             <Link to="/" className="d-block text-center mt-3">
-              <Button variant="secondary">Go to Webdoc</Button>
+              <Button variant="secondary">Retourner au Webdoc</Button>
             </Link>
           </Form>
         </Col>

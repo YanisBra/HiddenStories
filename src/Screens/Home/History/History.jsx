@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import SectionHeader from "../../../Components/SectionHeader";
 import LeftContent from "./LeftContent";
@@ -16,6 +15,7 @@ const History = () => {
       {historyData.map((item) => {
         const isOdd = parseInt(item.id) % 2 !== 0;
 
+        // Render LeftContent if item.id is odd, otherwise render RightContent
         return isOdd ? (
           <LeftContent
             key={item.id}
@@ -46,7 +46,6 @@ const History = () => {
 
 const HistoryContainer = styled.div`
   padding: 20px;
-  /* background-color: #76917c; */
 `;
 
 export default History;

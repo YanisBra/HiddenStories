@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { collection, addDoc } from "firebase/firestore";
-import { db } from "../../Config/firebase";
-import { Form, Button } from "react-bootstrap"; // Import des composants Bootstrap
+import { db, storage } from "../../Config/firebase";
+import { Form, Button } from "react-bootstrap";
 import styled from "styled-components";
-
 
 const StyledForm = styled(Form)`
   max-width: 600px;
@@ -15,25 +15,38 @@ const StyledButton = styled(Button)`
 `;
 
 const NewDocument = ({ handleClose }) => {
-  const [theme, setTheme] = useState("");
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
-  const [image, setImage] = useState("");
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [image, setImage] = useState(null);
+
+  // const handleImageChange = (e) => {
+  //   s;
+  //   const file = e.target.files[0];
+  //   setImage(file);
+  // };
 
   const handleSaveContent = async () => {
     try {
-      const docRef = await addDoc(collection(db, "content"), {
-        theme: theme,
-        title: title,
-        content: content,
+      // TO USE FIREBASE STORAGE AND UPLOAD IMAGE
+      // if (!image) {
+      //   console.error("Veuillez sélectionner une image.");
+      //   return;
+      // }
+
+      // const storageRef = ref(storage, `images/${image.name}`);
+      // await uploadBytes(storageRef, image);
+      // const imageURL = await getDownloadURL(storageRef);
+
+      const docRef = await addDoc(collection(db, "champions"), {
+        name: name,
+        description: description,
         image: image,
       });
       console.log("Document written with ID: ", docRef.id);
 
-      // Réinitialiser les champs après l'ajout
-      setTheme("");
-      setTitle("");
-      setContent("");
+      // Reset fields after addition
+      setName("");
+      setDescription("");
       setImage("");
 
       // Fermer la modal
@@ -45,30 +58,21 @@ const NewDocument = ({ handleClose }) => {
 
   return (
     <StyledForm>
-      <Form.Group controlId="theme">
-        <Form.Label>Theme:</Form.Label>
+      <Form.Group controlId="name">
+        <Form.Label>Nom:</Form.Label>
         <Form.Control
           type="text"
-          value={theme}
-          onChange={(e) => setTheme(e.target.value)}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
         />
       </Form.Group>
 
-      <Form.Group controlId="title">
-        <Form.Label>Title:</Form.Label>
-        <Form.Control
-          type="text"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-      </Form.Group>
-
-      <Form.Group controlId="content">
-        <Form.Label>Content:</Form.Label>
+      <Form.Group controlId="description">
+        <Form.Label>Description:</Form.Label>
         <Form.Control
           as="textarea"
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
         />
       </Form.Group>
 

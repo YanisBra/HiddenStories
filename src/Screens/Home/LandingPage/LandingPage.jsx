@@ -4,15 +4,7 @@ const LandingPage = () => {
   return (
     <Container>
       <LeftContainer>
-        <div className="content">
-          <h1 className="ping">Ping</h1>
-          <p className="content">
-            Lionel Messi est synonyme de FIFA FIFPRO World 11 masculin. Lorsque
-            l’on parle de la surprenante longévité de son jeu au top des
-            performances, le onze idéal est une parfaite référence : depuis
-            2007.
-          </p>
-        </div>
+        <h1 className="ping">Ping</h1>
       </LeftContainer>
       <RightContainer>
         <h1 className="pong">Pong</h1>
@@ -23,11 +15,22 @@ const LandingPage = () => {
 
 const Container = styled.div`
   width: 100%;
-  height: 100vh;
-  max-height: 720px;
+  height: 80vh;
   display: flex;
   background-image: url("/img/background.gif");
+  background-size: cover;
   overflow: hidden;
+
+  h1 {
+    font-size: 50px;
+  }
+
+  @media (max-width: 800px) {
+    height: 100vh;
+    h1 {
+      font-size: 30px;
+    }
+  }
 `;
 
 const LeftContainer = styled.div`
@@ -40,20 +43,22 @@ const LeftContainer = styled.div`
   padding-left: 10px;
 
   .ping {
+    width: 100%;
     text-align: right;
-  }
-
-  .content {
-    margin-top: 20px;
   }
 `;
 
 const RightContainer = styled.div`
   width: 55%;
   height: 100%;
+  margin-top: 40px;
   display: flex;
   align-items: center;
   color: white;
+
+  @media (max-width: 800px) {
+    margin-top: 25px;
+  }
 `;
 
 export default LandingPage;

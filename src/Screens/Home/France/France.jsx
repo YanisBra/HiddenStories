@@ -7,7 +7,7 @@ const France = () => {
   return (
     <FranceContainer id="france">
       <SectionHeader
-        title="FRANCE PING PONG"
+        title="LA FRANCE ET LE TENIS DE TABLE"
         description="Le tennis de table a été introduit en France à la fin du 19ème siècle,
           initialement comme un jeu de salon. La Fédération Française de Tennis
           de Table (FFTT) a été fondée en 1927, jouant un rôle crucial dans la

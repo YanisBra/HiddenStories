@@ -19,7 +19,7 @@ const CountryInfo = ({ name, city, content, date, flag, champions }) => {
           {name}, {city}
         </h2>
         <p>{content}</p>
-        {/* Affiche championContainer si chmapions n'est pas vide */}
+        {/* Display championContainer if champion is not empty */}
         {champions?.length > 0 && (
           <div className="championContainer">
             <h2 className="title">CHAMPIONS</h2>
@@ -72,6 +72,9 @@ const Header = styled.div`
   }
 
   .countryContainer {
+    img {
+      width: 150px;
+    }
   }
   .dateContainer {
   }
@@ -89,8 +92,19 @@ const Content = styled.div`
     .championList {
       display: flex;
       gap: 12px;
+      flex-wrap: wrap;
 
       .champion {
+        img {
+          max-width: 100px;
+          max-height: 60px;
+        }
+        @media (min-width: 550px) {
+          img {
+            max-width: 150px;
+            max-height: 80px;
+          }
+        }
       }
     }
   }

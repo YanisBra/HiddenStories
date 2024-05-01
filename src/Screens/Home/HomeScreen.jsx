@@ -1,12 +1,10 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import LandingPage from "./LandingPage/LandingPage";
 import International from "./International/Intenational";
 import History from "./History/History";
 import France from "./France/France";
-import Story from "./Story/Story";
-import News from "./News/News";
+import Stories from "./Stories/Stories";
 import { Navbar, Nav } from "react-bootstrap";
 
 const HomeScreen = () => {
@@ -20,7 +18,7 @@ const HomeScreen = () => {
             <NavLink href="#history">History</NavLink>
             <NavLink href="#international">International</NavLink>
             <NavLink href="#france">France</NavLink>
-            <NavLink href="#story">Story</NavLink>
+            <NavLink href="#story">Stories</NavLink>
             <NavLink>
               <StyledLink to="/admin">Admin</StyledLink>
             </NavLink>
@@ -31,8 +29,7 @@ const HomeScreen = () => {
       <History />
       <International />
       <France />
-      <Story />
-      {/* <News /> */}
+      <Stories />
     </Container>
   );
 };
@@ -50,7 +47,6 @@ const CustomNavbar = styled(Navbar)`
   }
 `;
 
-// Style des liens de navigation
 const NavLink = styled.a`
   text-decoration: none;
   color: #ffffff;

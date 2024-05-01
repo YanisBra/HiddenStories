@@ -6,10 +6,11 @@ import {
   updateDoc,
   doc,
 } from "firebase/firestore";
-import { Link } from "react-router-dom";
 import { db } from "../../Config/firebase";
-import { signOut } from "firebase/auth";
+
+import { Link } from "react-router-dom";
 import { FIREBASE_AUTH } from "../../Config/firebase";
+import { signOut } from "firebase/auth";
 import styled from "styled-components";
 import {
   Table,
@@ -24,12 +25,15 @@ import NewDocument from "./NewDocument";
 
 const BackOffice = () => {
   const auth = FIREBASE_AUTH;
+
   const [documents, setDocuments] = useState([]);
   const [editingDocumentId, setEditingDocumentId] = useState(null);
-  const [editedTheme, setEditedTheme] = useState("");
-  const [editedTitle, setEditedTitle] = useState("");
-  const [editedContent, setEditedContent] = useState("");
-  const [editedImage, setEditedImage] = useState("");
+  const [editedDocument, setEditedDocument] = useState({
+    id: "",
+    name: "",
+    description: "",
+    image: "",
+  });
   const [loading, setLoading] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [documentToDeleteId, setDocumentToDeleteId] = useState(null);
@@ -38,58 +42,35 @@ const BackOffice = () => {
   useEffect(() => {
     const fetchDocuments = async () => {
       try {
-        const querySnapshot = await getDocs(collection(db, "content"));
-        const fetchedDocuments = [];
-        querySnapshot.forEach((doc) => {
-          fetchedDocuments.push({ id: doc.id, ...doc.data() });
-        });
-        setDocuments(fetchedDocuments);
+        const querySnapshot = await getDocs(collection(db, "champions")); // Fetch documents collection from Firestore
+        const fetchedDocuments = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        })); // Map Firestore documents to an array of objects with document ID and data
+        setDocuments(fetchedDocuments); // Update documents state with fetched data
       } catch (error) {
         console.error("Error fetching documents: ", error);
       }
     };
 
-    fetchDocuments();
+    fetchDocuments(); // Trigger document fetching on component mount
   }, []);
 
-  const handleEditDocument = async (documentId) => {
-    const documentToEdit = documents.find((doc) => doc.id === documentId);
-    if (documentToEdit) {
-      setEditingDocumentId(documentId);
-      setEditedTheme(documentToEdit.theme);
-      setEditedTitle(documentToEdit.title);
-      setEditedContent(documentToEdit.content);
-      setEditedImage(documentToEdit.image);
-    }
+  const handleEditDocument = (document) => {
+    setEditingDocumentId(document.id);
+    setEditedDocument({ ...document });
   };
 
   const handleUpdateDocument = async () => {
     setLoading(true);
     try {
-      await updateDoc(doc(db, "content", editingDocumentId), {
-        theme: editedTheme,
-        title: editedTitle,
-        content: editedContent,
-        image: editedImage,
-      });
-
+      await updateDoc(doc(db, "champions", editingDocumentId), editedDocument);
       const updatedDocuments = documents.map((doc) =>
-        doc.id === editingDocumentId
-          ? {
-              ...doc,
-              theme: editedTheme,
-              title: editedTitle,
-              content: editedContent,
-              image: editedImage,
-            }
-          : doc
-      );
+        doc.id === editingDocumentId ? { ...editedDocument } : doc
+      ); // Map through existing documents to update the edited document
       setDocuments(updatedDocuments);
-
-      setEditingDocumentId(null);
-      setEditedTheme("");
-      setEditedTitle("");
-      setEditedContent("");
+      setEditingDocumentId(null); // Reset editingDocumentId after update
+      setEditedDocument({ id: "", name: "", description: "", image: "" }); // Reset editedDocument state
     } catch (error) {
       console.error("Error updating document: ", error);
     } finally {
@@ -97,11 +78,13 @@ const BackOffice = () => {
     }
   };
 
-  const handleDeleteDocument = async (documentId) => {
+  const handleDeleteDocument = async () => {
     try {
-      await deleteDoc(doc(db, "content", documentId));
-      const updatedDocuments = documents.filter((doc) => doc.id !== documentId);
-      setDocuments(updatedDocuments);
+      await deleteDoc(doc(db, "champions", documentToDeleteId));
+      const updatedDocuments = documents.filter(
+        (doc) => doc.id !== documentToDeleteId
+      ); // Filter out the deleted document from the documents array
+      setDocuments(updatedDocuments); // Update documents state after deletion
       setShowDeleteModal(false);
     } catch (error) {
       console.error("Error deleting document: ", error);
@@ -113,10 +96,6 @@ const BackOffice = () => {
     setShowDeleteModal(true);
   };
 
-  const handleShowNewDocumentModal = () => {
-    setShowNewDocumentModal(true);
-  };
-
   const handleCloseNewDocumentModal = () => {
     setShowNewDocumentModal(false);
   };
@@ -124,7 +103,6 @@ const BackOffice = () => {
   const logOut = async () => {
     try {
       await signOut(auth);
-      setUser(null);
     } catch (error) {
       console.error("Erreur lors de la déconnexion :", error);
     }
@@ -137,12 +115,12 @@ const BackOffice = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link onClick={handleShowNewDocumentModal}>
-              Add Document
+            <Nav.Link onClick={() => setShowNewDocumentModal(true)}>
+              Ajouter un Champion
             </Nav.Link>
             <Nav.Link onClick={logOut}>Se déconnecter</Nav.Link>
             <Nav.Link as={Link} to="/">
-              Go to Webdoc
+              Retourner au Webdoc
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
@@ -151,10 +129,9 @@ const BackOffice = () => {
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th>Theme</th>
-            <th>Title</th>
-            <th>Content</th>
-            <th>Image URL</th>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Image</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -165,41 +142,45 @@ const BackOffice = () => {
                 {editingDocumentId === document.id ? (
                   <EditInput
                     type="text"
-                    value={editedTheme}
-                    onChange={(e) => setEditedTheme(e.target.value)}
+                    value={editedDocument.name}
+                    onChange={(e) =>
+                      setEditedDocument({
+                        ...editedDocument,
+                        name: e.target.value,
+                      })
+                    }
                   />
                 ) : (
-                  document.theme
+                  document.name
                 )}
               </td>
               <td>
                 {editingDocumentId === document.id ? (
                   <EditInput
                     type="text"
-                    value={editedTitle}
-                    onChange={(e) => setEditedTitle(e.target.value)}
+                    value={editedDocument.description}
+                    onChange={(e) =>
+                      setEditedDocument({
+                        ...editedDocument,
+                        description: e.target.value,
+                      })
+                    }
                   />
                 ) : (
-                  document.title
+                  document.description
                 )}
               </td>
               <td>
                 {editingDocumentId === document.id ? (
                   <EditInput
                     type="text"
-                    value={editedContent}
-                    onChange={(e) => setEditedContent(e.target.value)}
-                  />
-                ) : (
-                  document.content
-                )}
-              </td>
-              <td>
-                {editingDocumentId === document.id ? (
-                  <EditInput
-                    type="text"
-                    value={editedImage}
-                    onChange={(e) => setEditedImage(e.target.value)}
+                    value={editedDocument.image}
+                    onChange={(e) =>
+                      setEditedDocument({
+                        ...editedDocument,
+                        image: e.target.value,
+                      })
+                    }
                   />
                 ) : (
                   document.image
@@ -222,22 +203,22 @@ const BackOffice = () => {
                         className="me-1"
                       />
                     ) : null}
-                    Save
+                    Enregistrer
                   </Button>
                 ) : (
                   <>
                     <Button
                       variant="primary"
-                      onClick={() => handleEditDocument(document.id)}
+                      onClick={() => handleEditDocument(document)}
                       className="me-2"
                     >
-                      Edit
+                      Modifier
                     </Button>
                     <Button
                       variant="danger"
                       onClick={() => confirmDelete(document.id)}
                     >
-                      Delete
+                      Supprimer
                     </Button>
                   </>
                 )}
@@ -252,16 +233,13 @@ const BackOffice = () => {
           <Modal.Title>Confirmation de suppression</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          Êtes-vous sûr de vouloir supprimer ce document ?
+          Êtes-vous sûr de vouloir supprimer ce champion ?
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={() => setShowDeleteModal(false)}>
             Annuler
           </Button>
-          <Button
-            variant="danger"
-            onClick={() => handleDeleteDocument(documentToDeleteId)}
-          >
+          <Button variant="danger" onClick={handleDeleteDocument}>
             Supprimer
           </Button>
         </Modal.Footer>
@@ -269,7 +247,7 @@ const BackOffice = () => {
 
       <Modal show={showNewDocumentModal} onHide={handleCloseNewDocumentModal}>
         <Modal.Header closeButton>
-          <Modal.Title>New Document</Modal.Title>
+          <Modal.Title>Nouveau Champion</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <NewDocument handleClose={handleCloseNewDocumentModal} />

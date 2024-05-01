@@ -7,7 +7,7 @@ const International = () => {
     <InternationalContainer id="international">
       <SectionHeader
         title="INTERNATIONAL"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ali."
+        description="Explorez les défis et les exploits des joueurs de tennis de table qui aspirent à la compétition au plus haut niveau à travers le monde."
       />
       <Continent />
     </InternationalContainer>
@@ -17,7 +17,6 @@ const International = () => {
 const InternationalContainer = styled.div`
   margin-top: 20px;
   padding: 20px;
-  /* background-color: #cfdeec; */
 `;
 
 export default International;

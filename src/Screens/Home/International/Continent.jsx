@@ -15,6 +15,7 @@ const Continent = () => {
     selectedContinent.countries[0]
   );
 
+  // Function to navigate to the next continent
   const next = () => {
     const nextIndex = (currentIndex + 1) % internationalData.length;
     setCurrentIndex(nextIndex);
@@ -22,6 +23,7 @@ const Continent = () => {
     setSelectedCountry(internationalData[nextIndex].countries[0]);
   };
 
+  // Function to navigate to the previous continent
   const prev = () => {
     const prevIndex =
       (currentIndex - 1 + internationalData.length) % internationalData.length;
@@ -31,21 +33,22 @@ const Continent = () => {
   };
 
   const handleContinentClick = (index) => {
-    setCurrentIndex(index);
-    const newSelectedContinent = internationalData[index];
-    setSelectedContinent(newSelectedContinent);
-    setSelectedCountry(newSelectedContinent.countries[0]); // Sélectionner le premier pays du nouveau continent
+    setCurrentIndex(index); // Set the current index to the clicked continent's index
+    const newSelectedContinent = internationalData[index]; // Retrieve the selected continent from internationalData array
+    setSelectedContinent(newSelectedContinent); // Set the selected continent state to the clicked continent
+    setSelectedCountry(newSelectedContinent.countries[0]); // Select the first country of the new continent
   };
 
   const handleCountryClick = (country) => {
     setSelectedCountry(country);
   };
 
+  // Function to get an infite carousel
   const getVisibleContinents = () => {
     const leftIndex =
-      (currentIndex - 1 + internationalData.length) % internationalData.length;
-    const centerIndex = currentIndex;
-    const rightIndex = (currentIndex + 1) % internationalData.length;
+      (currentIndex - 1 + internationalData.length) % internationalData.length; // Calculate the index of the left visible continent
+    const centerIndex = currentIndex; // Current index is the center visible continent
+    const rightIndex = (currentIndex + 1) % internationalData.length; // Calculate the index of the right visible continent
 
     return [
       { index: leftIndex, continent: internationalData[leftIndex] },
@@ -132,8 +135,6 @@ const ContinentList = styled.ul`
   align-items: center;
   margin: auto;
 
-  /* background-color: #f9b9b9; */
-
   .icon {
     color: var(--gold);
     font-size: 30px;
@@ -178,7 +179,6 @@ const SelectedContinent = styled.div`
   @media (min-width: 800px) {
     width: 60%;
   }
-  /* background-color: #d1c0f7; */
 
   .continent-img {
     @media (min-width: 800px) {
@@ -204,8 +204,6 @@ const CountryList = styled.div`
   @media (min-width: 1200px) {
     justify-content: center;
   }
-
-  /* background-color: #e7f7c0; */
 
   /* Scrollbar */
   &::-webkit-scrollbar {
