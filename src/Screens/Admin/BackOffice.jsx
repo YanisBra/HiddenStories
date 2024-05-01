@@ -274,6 +274,7 @@ const Container = styled.div`
 const EditInput = styled(Form.Control)`
   margin-bottom: 5px;
   height: 200px;
+  width: 15vw;
 `;
 
 export default BackOffice;
