@@ -14,7 +14,7 @@ const StyledButton = styled(Button)`
   margin-top: 10px;
 `;
 
-const NewDocument = ({ handleClose }) => {
+const NewChampion = ({ handleClose }) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
@@ -92,4 +92,4 @@ const NewDocument = ({ handleClose }) => {
   );
 };
 
-export default NewDocument;
+export default NewChampion;

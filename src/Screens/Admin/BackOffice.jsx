@@ -21,7 +21,7 @@ import {
   Navbar,
   Nav,
 } from "react-bootstrap";
-import NewDocument from "./NewDocument";
+import NewChampion from "./NewChampion";
 
 const BackOffice = () => {
   const auth = FIREBASE_AUTH;
@@ -141,7 +141,7 @@ const BackOffice = () => {
               <td>
                 {editingDocumentId === document.id ? (
                   <EditInput
-                    type="text"
+                    as="textarea"
                     value={editedDocument.name}
                     onChange={(e) =>
                       setEditedDocument({
@@ -151,13 +151,13 @@ const BackOffice = () => {
                     }
                   />
                 ) : (
-                  document.name
+                  <p className="content">{document.name}</p>
                 )}
               </td>
               <td>
                 {editingDocumentId === document.id ? (
                   <EditInput
-                    type="text"
+                    as="textarea"
                     value={editedDocument.description}
                     onChange={(e) =>
                       setEditedDocument({
@@ -167,13 +167,13 @@ const BackOffice = () => {
                     }
                   />
                 ) : (
-                  document.description
+                  <p className="content">{document.description}</p>
                 )}
               </td>
               <td>
                 {editingDocumentId === document.id ? (
                   <EditInput
-                    type="text"
+                    as="textarea"
                     value={editedDocument.image}
                     onChange={(e) =>
                       setEditedDocument({
@@ -183,7 +183,7 @@ const BackOffice = () => {
                     }
                   />
                 ) : (
-                  document.image
+                  <p className="content">{document.image}</p>
                 )}
               </td>
               <td>
@@ -250,7 +250,7 @@ const BackOffice = () => {
           <Modal.Title>Nouveau Champion</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <NewDocument handleClose={handleCloseNewDocumentModal} />
+          <NewChampion handleClose={handleCloseNewDocumentModal} />
         </Modal.Body>
       </Modal>
     </Container>
@@ -260,10 +260,20 @@ const BackOffice = () => {
 const Container = styled.div`
   margin: 0 auto;
   padding: 20px;
+  max-width: 90vw;
+
+  .content {
+    max-height: 300px;
+    max-width: 20vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+  }
 `;
 
 const EditInput = styled(Form.Control)`
   margin-bottom: 5px;
+  height: 200px;
 `;
 
 export default BackOffice;
