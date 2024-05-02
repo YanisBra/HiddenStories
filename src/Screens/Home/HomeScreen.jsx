@@ -6,21 +6,25 @@ import History from "./History/History";
 import France from "./France/France";
 import Stories from "./Stories/Stories";
 import { Navbar, Nav } from "react-bootstrap";
+import Footer from "../../Components/Footer";
 
 const HomeScreen = () => {
   return (
     <Container>
       <CustomNavbar variant="dark" fixed="top" expand="lg">
-        <Navbar.Brand href="#top">HiddenStories</Navbar.Brand>
+        <Navbar.Brand href="#top" className="hiddenstories">
+          <img className="logo" src="/img/logo.png" alt="logo" />
+          HIDDEN STORIES
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
-            <NavLink href="#history">History</NavLink>
-            <NavLink href="#international">International</NavLink>
-            <NavLink href="#france">France</NavLink>
-            <NavLink href="#story">Stories</NavLink>
+            <NavLink href="#history">HISTOIRE</NavLink>
+            <NavLink href="#international">INTERNATIONAL</NavLink>
+            <NavLink href="#france">FRANCE</NavLink>
+            <NavLink href="#story">CHAMPIONS DE FRANCE</NavLink>
             <NavLink>
-              <StyledLink to="/admin">Admin</StyledLink>
+              <StyledLink to="/admin">ADMIN</StyledLink>
             </NavLink>
           </Nav>
         </Navbar.Collapse>
@@ -30,20 +34,36 @@ const HomeScreen = () => {
       <International />
       <France />
       <Stories />
+      <Footer />
     </Container>
   );
 };
 
 const Container = styled.div`
   font-family: "Barlow";
+  background-color: var(--white);
 `;
 
 const CustomNavbar = styled(Navbar)`
   padding: 10px;
   backdrop-filter: blur(3px);
   background-color: rgba(36, 36, 36, 0.4);
+  font-family: "KoHo";
+  font-weight: bold;
   .ml-auto {
     margin-left: auto;
+  }
+
+  .hiddenstories {
+    display: flex;
+    align-items: center;
+  }
+  .logo {
+    width: 60px;
+
+    @media (max-width: 800px) {
+      /* display: none; */
+    }
   }
 `;
 

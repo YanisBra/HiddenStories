@@ -226,7 +226,7 @@ const internationalData = [
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         date: "1960",
         image1: "/img/International/Asie/coree-du-sud.svg",
-        image2: "/img/International/Asie/coree-du-sud-w-w.svg",
+        image2: "/img/International/Asie/coree-du-sud-w.svg",
         flag: "https://picsum.photos/95/55",
         champions: [
           {

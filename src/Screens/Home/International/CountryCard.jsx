@@ -26,7 +26,7 @@ const StyledCard = styled.div`
   align-items: center;
   background-color: ${(props) =>
     props.selected ? "var(--green)" : "transparent"};
-  color: ${(props) => (props.selected ? "#ffffff" : "var(--green)")};
+  color: ${(props) => (props.selected ? "var(--white)" : "var(--green)")};
   border: ${(props) =>
     props.selected ? "1px solid white" : "1px solid var(--green)"};
 
