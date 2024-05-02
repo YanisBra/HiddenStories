@@ -22,7 +22,7 @@ const Container = styled.div`
   overflow: hidden;
 
   h1 {
-    font-size: 50px;
+    font-size: 110px;
   }
 
   @media (max-width: 800px) {
@@ -51,7 +51,7 @@ const LeftContainer = styled.div`
 const RightContainer = styled.div`
   width: 55%;
   height: 100%;
-  margin-top: 40px;
+  margin-top: 100px;
   display: flex;
   align-items: center;
   color: white;
