@@ -62,16 +62,16 @@ const internationalData = [
         date: "1960",
         image1: "/img/International/Europe/allemagne.svg",
         image2: "/img/International/Europe/allemagne-w.svg",
-        flag: "https://picsum.photos/95/55",
+        flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flag_of_Germany.svg/1280px-Flag_of_Germany.svg.png",
         champions: [
-          {
-            name: "San Sebastian",
-            image: "https://picsum.photos/90/60",
-          },
-          {
-            name: "Technigen Linares",
-            image: "https://picsum.photos/91/60",
-          },
+          // {
+          //   name: "San Sebastian",
+          //   image: "https://picsum.photos/90/60",
+          // },
+          // {
+          //   name: "Technigen Linares",
+          //   image: "https://picsum.photos/91/60",
+          // },
         ],
       },
       // {
@@ -102,16 +102,16 @@ const internationalData = [
         date: "1960",
         image1: "/img/International/Europe/greece.svg",
         image2: "/img/International/Europe/greece-w.svg",
-        flag: "https://picsum.photos/95/55",
+        flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Greece.svg/2560px-Flag_of_Greece.svg.png",
         champions: [
-          {
-            name: "San Sebastian",
-            image: "https://picsum.photos/90/60",
-          },
-          {
-            name: "Technigen Linares",
-            image: "https://picsum.photos/91/60",
-          },
+          // {
+          //   name: "San Sebastian",
+          //   image: "https://picsum.photos/90/60",
+          // },
+          // {
+          //   name: "Technigen Linares",
+          //   image: "https://picsum.photos/91/60",
+          // },
         ],
       },
       {
@@ -138,22 +138,22 @@ const internationalData = [
       },
       {
         name: "RUSSIE",
-        city: "Sotchie",
+        city: "Moscou",
         content:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         date: "1960",
         image1: "/img/International/Europe/russie.svg",
         image2: "/img/International/Europe/russie-w.svg",
-        flag: "https://picsum.photos/95/55",
+        flag: "https://upload.wikimedia.org/wikipedia/commons/f/f3/Flag_of_Russia.svg",
         champions: [
-          {
-            name: "San Sebastian",
-            image: "https://picsum.photos/90/60",
-          },
-          {
-            name: "Technigen Linares",
-            image: "https://picsum.photos/91/60",
-          },
+          // {
+          //   name: "San Sebastian",
+          //   image: "https://picsum.photos/90/60",
+          // },
+          // {
+          //   name: "Technigen Linares",
+          //   image: "https://picsum.photos/91/60",
+          // },
         ],
       },
     ],
@@ -189,7 +189,7 @@ const internationalData = [
         date: "1960",
         image1: "/img/International/Asie/japon.svg",
         image2: "/img/International/Asie/japon-w.svg",
-        flag: "https://fr.geneawiki.com/images/9/91/Drapeau_Japon.png",
+        flag: "https://upload.wikimedia.org/wikipedia/commons/9/9e/Flag_of_Japan.svg",
         champions: [
           {
             name: "Tomokazu Harimoto",
@@ -200,43 +200,43 @@ const internationalData = [
       },
       {
         name: "CHINE",
-        city: "",
+        city: "Pékin",
         content:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         date: "1960",
         image1: "/img/International/Asie/chine.svg",
         image2: "/img/International/Asie/chine-w.svg",
-        flag: "https://picsum.photos/95/55",
+        flag: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLE3-cZnLuIn4ICQ9rU5z9tTBeA98ak5ddgXitJdO-Hg&s",
         champions: [
-          {
-            name: "San Sebastian",
-            image: "https://picsum.photos/90/60",
-          },
-          {
-            name: "Technigen Linares",
-            image: "https://picsum.photos/91/60",
-          },
+          // {
+          //   name: "San Sebastian",
+          //   image: "https://picsum.photos/90/60",
+          // },
+          // {
+          //   name: "Technigen Linares",
+          //   image: "https://picsum.photos/91/60",
+          // },
         ],
       },
 
       {
         name: "CORÉE DU SUD",
-        city: "",
+        city: "Séoul",
         content:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         date: "1960",
         image1: "/img/International/Asie/coree-du-sud.svg",
         image2: "/img/International/Asie/coree-du-sud-w.svg",
-        flag: "https://picsum.photos/95/55",
+        flag: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/2560px-Flag_of_South_Korea.svg.png",
         champions: [
-          {
-            name: "San Sebastian",
-            image: "https://picsum.photos/90/60",
-          },
-          {
-            name: "Technigen Linares",
-            image: "https://picsum.photos/91/60",
-          },
+          // {
+          //   name: "San Sebastian",
+          //   image: "https://picsum.photos/90/60",
+          // },
+          // {
+          //   name: "Technigen Linares",
+          //   image: "https://picsum.photos/91/60",
+          // },
         ],
       },
     ],
